@@ -1,5 +1,0 @@
-id,type,severity_level,in_psnr,psnr,d_psnr,in_ssim,ssim
-chihuahua_21__gaussian_blur__high,gaussian_blur,high,22.54467,20.985054,-1.5596161,0.39976326,0.34351406
-Bengal_19__occlusion__high,occlusion,high,12.496614,16.65757,4.1609554,0.6271294,0.50475925
-basset_hound_35__clean,clean,none,100.0,12.606972,-87.39303,1.0,0.8419423
-Sphynx_23__occlusion__low,occlusion,low,81.621994,33.812195,-47.8098,0.9999901,0.9628344
