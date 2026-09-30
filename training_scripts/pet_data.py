@@ -531,8 +531,102 @@ def make_eval_loader(images_u8, name_to_row, records, batch_size=64, classes=Non
                      return_index=False, num_workers=None, pin_memory=True):
     num_workers = default_num_workers() if num_workers is None else num_workers
     ds = ManifestCorruptionDataset(images_u8, name_to_row, records, classes=classes, return_index=return_index)
+    # Not persistent: eval workers exit after each pass, so idle loaders don't hold RAM
+    # (each worker gradually copies the Python objects it touches — "copy-on-read").
     return DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=num_workers,
-                      pin_memory=pin_memory and torch.cuda.is_available(), persistent_workers=num_workers > 0)
+                      pin_memory=pin_memory and torch.cuda.is_available(), persistent_workers=False)
+
+
+class PetData:
+    """Everything a Task 1–3 notebook needs, built by prepare_data()."""
+
+    def __init__(self, **kw):
+        self.__dict__.update(kw)
+
+    def load_test_images(self, cache_dir=None):
+        """FINAL EVALUATION ONLY: decode the quarantined official test images (cached)."""
+        cache = Path(cache_dir or self.cache_dir) / "test_128.npz"
+        out = load_clean_images(self.test_names, self.images_dir, cache_path=cache)
+        return out["images"], {n: i for i, n in enumerate(out["names"])}, out["failed"]
+
+    def summary(self) -> dict:
+        return {"source": self.source, "images_dir": str(self.images_dir), "n_train": len(self.train_images),
+                "n_val": len(self.val_images), "n_test": len(self.test_names),
+                "n_val_records": len(self.val_manifest["records"]),
+                "n_test_records": len(self.test_manifest["records"]),
+                "split_sha256": self.hashes.get("split"), "val_manifest_sha256": self.hashes.get("val"),
+                "test_manifest_sha256": self.hashes.get("test")}
+
+
+def find_prep_outputs(search_root="/kaggle/input") -> Path | None:
+    """Locate an attached output of notebook 00 (folder containing manifests/val_manifest.json)."""
+    for p in sorted(Path(search_root).rglob("val_manifest.json")):
+        root = p.parent.parent
+        if (root / "manifests" / "test_manifest.json").exists() and (root / "artifacts" / "split_seed42.json").exists():
+            return root
+    return None
+
+
+def prepare_data(input_root="/kaggle/input", work_dir="/kaggle/working", images_dir=None, annot_dir=None,
+                 seed: int = SPLIT_SEED, verbose: bool = True) -> PetData:
+    """Return split, clean train/val arrays and both manifests.
+
+    1. If notebook 00's output is attached under `input_root`, its split + manifests are reused
+       (guarantees byte-identical data across Tasks 1–3).
+    2. Otherwise everything is regenerated deterministically (same seeds -> same files/hashes)
+       and saved under `work_dir`.
+    The official Oxford-IIIT Pet dataset must be attached in both cases (for the pixels).
+    """
+    input_root, work_dir = Path(input_root), Path(work_dir)
+    cache_dir = work_dir / "cache"
+    if images_dir is None or annot_dir is None:
+        found = find_pet_dataset(input_root)
+        images_dir = Path(images_dir or found["images_dir"])
+        annot_dir = Path(annot_dir or found["annotations_dir"])
+    test_names = read_split_list(Path(annot_dir) / "test.txt")
+
+    prep = find_prep_outputs(input_root)
+    if prep is not None:
+        source = f"attached notebook-00 output: {prep}"
+        split = load_json(prep / "artifacts" / "split_seed42.json")
+        val_manifest = load_json(prep / "manifests" / "val_manifest.json")
+        test_manifest = load_json(prep / "manifests" / "test_manifest.json")
+        hashes = {"split": sha256_file(prep / "artifacts" / "split_seed42.json"),
+                  "val": sha256_file(prep / "manifests" / "val_manifest.json"),
+                  "test": sha256_file(prep / "manifests" / "test_manifest.json")}
+        wanted = split["train"] + split["val"]
+        cached = prep / "cache" / "trainval_128.npz"
+        tv = None
+        if cached.exists():
+            z = load_clean_images(read_split_list(Path(annot_dir) / "trainval.txt"), images_dir,
+                                  cache_path=cached, verbose=False)
+            tv = z if set(wanted) <= set(z["names"]) else None
+        if tv is None:
+            tv = load_clean_images(wanted, images_dir, cache_path=cache_dir / "trainval_128.npz", verbose=verbose)
+    else:
+        source = "regenerated deterministically (notebook-00 output not attached)"
+        trainval_names = read_split_list(Path(annot_dir) / "trainval.txt")
+        tv = load_clean_images(trainval_names, images_dir, cache_path=cache_dir / "trainval_128.npz", verbose=verbose)
+        split = make_split(tv["names"], VAL_FRACTION, seed)
+        split["excluded_unreadable"] = tv["failed"]
+        val_manifest = build_val_manifest(split["val"], seed)
+        test_manifest = build_test_manifest(test_names, seed)
+        hashes = {"split": save_json(split, work_dir / "artifacts" / "split_seed42.json", indent=1),
+                  "val": save_json(val_manifest, work_dir / "manifests" / "val_manifest.json"),
+                  "test": save_json(test_manifest, work_dir / "manifests" / "test_manifest.json")}
+
+    row = {n: i for i, n in enumerate(tv["names"])}
+    train_images = tv["images"][[row[n] for n in split["train"]]]
+    val_images = tv["images"][[row[n] for n in split["val"]]]
+    assert not set(split["train"]) & set(split["val"]) and not (set(split["train"]) | set(split["val"])) & set(test_names)
+    data = PetData(source=source, images_dir=images_dir, annot_dir=annot_dir, cache_dir=cache_dir, split=split,
+                   train_images=train_images, val_images=val_images,
+                   val_name_to_row={n: i for i, n in enumerate(split["val"])},
+                   val_manifest=val_manifest, test_manifest=test_manifest, test_names=test_names, hashes=hashes)
+    if verbose:
+        for k, v in data.summary().items():
+            print(f"  {k:22s} {v}")
+    return data
 
 
 def seed_everything(seed: int = SPLIT_SEED):
