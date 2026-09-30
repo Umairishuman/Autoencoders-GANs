@@ -1,1 +1,4 @@
 GenAI_Assignment#1.pdf
+*.pth
+*.zip
+.env

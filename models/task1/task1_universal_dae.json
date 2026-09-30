@@ -1,0 +1,101 @@
+{
+ "best_epoch": 78,
+ "compression_ratio": 48.0,
+ "cpu_latency_ms": {
+  "batch": 1,
+  "median_ms": 81.88078599960136,
+  "p90_ms": 85.31620730027498
+ },
+ "hyperparameters": {
+  "alpha": 0.5259249457197235,
+  "base_channels": 48,
+  "batch_size": 16,
+  "dropout": 0.22831461599364022,
+  "latent_channels": 16,
+  "lr": 0.0007959013675041019,
+  "skip_levels": 2
+ },
+ "input": {
+  "dtype": "float32",
+  "layout": "NCHW, RGB",
+  "name": "input",
+  "preprocess": "PIL convert('RGB') -> resize 128x128 BICUBIC -> /255",
+  "range": [
+   0,
+   1
+  ],
+  "shape": [
+   "batch",
+   3,
+   128,
+   128
+  ]
+ },
+ "latent_dim": 1024,
+ "latent_shape": [
+  16,
+  8,
+  8
+ ],
+ "model_config": {
+  "base_channels": 48,
+  "depth": 4,
+  "dropout": 0.22831461599364022,
+  "img_size": 128,
+  "latent_channels": 16,
+  "max_mult": 8,
+  "skip_levels": 2
+ },
+ "onnx_file": "task1_universal_dae.onnx",
+ "onnx_parity": {
+  "test": {
+   "max_abs_diff": 2.9027462005615234e-05,
+   "mean_abs_diff": 4.813670102521428e-07,
+   "min_psnr_torch_vs_onnx": 100.0,
+   "n_images": 64,
+   "passed": true
+  },
+  "val": {
+   "max_abs_diff": 2.256035804748535e-05,
+   "mean_abs_diff": 3.9207793633977417e-07,
+   "min_psnr_torch_vs_onnx": 100.0,
+   "n_images": 64,
+   "passed": true
+  }
+ },
+ "opset": 17,
+ "output": {
+  "name": "output",
+  "range": [
+   0,
+   1
+  ],
+  "shape": [
+   "batch",
+   3,
+   128,
+   128
+  ]
+ },
+ "params_M": 10.930099,
+ "task": "universal_restoration",
+ "val_metrics": {
+  "loss": 0.06277370128942572,
+  "mae": 0.034333642572164536,
+  "mae/clean": 0.02966298721730709,
+  "mae/gaussian_blur": 0.0359591469168663,
+  "mae/occlusion": 0.0459553487598896,
+  "mae/salt_pepper": 0.02575709857046604,
+  "psnr": 27.42624282836914,
+  "psnr/clean": 29.566173553466797,
+  "psnr/gaussian_blur": 27.66830825805664,
+  "psnr/occlusion": 22.346263885498047,
+  "psnr/salt_pepper": 30.124225616455078,
+  "score": 0.7956658601760864,
+  "ssim": 0.9056756496429443,
+  "ssim/clean": 0.9559475183486938,
+  "ssim/gaussian_blur": 0.9050742387771606,
+  "ssim/occlusion": 0.8141165971755981,
+  "ssim/salt_pepper": 0.947564423084259
+ }
+}
