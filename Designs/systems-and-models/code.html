@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary": "#ffffff",
+          "on-surface-variant": "#3c4945",
+          "on-tertiary-fixed": "#2a1700",
+          "outline-variant": "#bbcac4",
+          "primary-container": "#07ac93",
+          "tertiary": "#835409",
+          "secondary-container": "#bcedde",
+          "inverse-primary": "#57dbc0",
+          "on-primary-fixed-variant": "#005144",
+          "outline": "#6c7a75",
+          "primary-fixed-dim": "#57dbc0",
+          "surface-variant": "#dee4e1",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed": "#bcedde",
+          "on-error": "#ffffff",
+          "inverse-surface": "#2c3230",
+          "on-secondary-fixed": "#00201a",
+          "tertiary-fixed-dim": "#fabb6a",
+          "secondary": "#3a665b",
+          "on-tertiary-container": "#472b00",
+          "surface-bright": "#f5fbf8",
+          "primary-fixed": "#77f8dc",
+          "on-surface": "#171d1b",
+          "error": "#ba1a1a",
+          "surface-container-lowest": "#ffffff",
+          "inverse-on-surface": "#ecf2ef",
+          "on-primary-fixed": "#00201a",
+          "secondary-fixed-dim": "#a1d0c2",
+          "on-error-container": "#93000a",
+          "surface-container-highest": "#dee4e1",
+          "on-primary-container": "#00382f",
+          "primary": "#006b5b",
+          "error-container": "#ffdad6",
+          "surface-container-low": "#eff5f2",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed": "#ffddb7",
+          "on-secondary-container": "#406d61",
+          "surface-tint": "#006b5b",
+          "tertiary-container": "#c68d42",
+          "surface-container-high": "#e4e9e7",
+          "on-secondary": "#ffffff",
+          "surface": "#f5fbf8",
+          "on-background": "#171d1b",
+          "on-secondary-fixed-variant": "#214e44",
+          "background": "#f5fbf8",
+          "surface-container": "#eaefec",
+          "surface-dim": "#d6dbd9"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "gutter-desktop": "1.5rem",
+          "gutter": "1rem",
+          "space-lg": "1.5rem",
+          "margin": "1.5rem",
+          "space-md": "1rem",
+          "margin-desktop": "2rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [ "Inter" ],
+          "mono-sm": [ "JetBrains Mono" ],
+          "headline-lg": [ "Inter" ],
+          "headline-md": [ "Inter" ],
+          "headline-sm": [ "Inter" ],
+          "headline-lg-mobile": [ "Inter" ],
+          "body-lg": [ "Inter" ],
+          "body-md": [ "Inter" ],
+          "label-sm": [ "Inter" ],
+          "body-sm": [ "Inter" ],
+          "mono-lg": [ "JetBrains Mono" ],
+          "mono-md": [ "JetBrains Mono" ]
+        },
+        "fontSize": {
+          "label-lg": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ],
+          "mono-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" } ],
+          "headline-lg": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" } ],
+          "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
+          "headline-sm": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" } ],
+          "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" } ],
+          "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ],
+          "body-md": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ],
+          "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ],
+          "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ],
+          "mono-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" } ],
+          "mono-md": [ "12px", { "lineHeight": "18px", "letterSpacing": "0.0em", "fontWeight": "400" } ]
+        }
+      }
+    }
+  };
+</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-60 bg-surface-container-lowest border-r border-outline-variant/40 z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-14 px-4 flex items-center justify-between border-b border-outline-variant/30"><div class="flex items-center gap-2.5 overflow-hidden"><img alt="Restoration Lab Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XkMRmfp75z6WNn0CCEm9cptsr93mI_xl5R16Gp5UVNn9IZb9tPXsFfricWm-Su-ZEnVv6exQ8CPGyxY2pqRnW5kDCz81Rt3Z5LnKAB_TUoMeaczNhq2ywrSuzNQZyiJ6H7IyebVS7x-7bjstmoTMkiKKkob3ZUcaKDyLJbv8W3vICM7j70HMQS-q_b1DccIJJprfeLvp6-Qz2HbqdS3S60qmGCqLHQSXejsZrMfx2-6nzdGNc6QYLqTZeF"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Restoration Lab</span></div></div><span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium border border-outline-variant/50 flex-shrink-0">v1.4</span></div><div class="px-4 pt-6 pb-2"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Workspaces</span></div><nav class="px-2 space-y-1" data-active-classes="bg-primary text-on-primary font-medium shadow-sm"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="universal" href="#"><span class="material-symbols-outlined text-[18px]">auto_fix_high</span><span class="truncate">Universal Restoration</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="hard-routed" href="#"><span class="material-symbols-outlined text-[18px]">alt_route</span><span class="truncate">Hard-Routed MoE</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soft-moe" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="truncate">Soft MoE Restoration</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="face-sketch" href="#"><span class="material-symbols-outlined text-[18px]">draw</span><span class="truncate">Face-to-Sketch</span></a></nav></div><div class="p-3 border-t border-outline-variant/30 flex flex-col gap-1"><div class="px-2 py-1"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Bench Telemetry</span></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-medium"><a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="experiments" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="truncate">Experiments (W&amp;B)</span></div><span class="material-symbols-outlined text-[14px] text-secondary">open_in_new</span></a><a aria-current="page" class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg transition-colors bg-primary text-on-primary font-medium shadow-sm" data-path="system" href="#"><span class="material-symbols-outlined text-[18px]">memory</span><span class="truncate">System &amp; Models</span></a></nav><div class="mt-3 pt-3 border-t border-outline-variant/30 px-2 flex items-center justify-between text-secondary"><span class="font-mono-sm text-mono-sm">CUDA 12.2 · ONNX</span><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span></div></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur border-b border-outline-variant/40 z-40 flex items-center justify-between px-6"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-[20px]">biotech</span><span class="font-mono-sm text-mono-sm text-secondary tracking-normal">Academic AI Bench · Image Restoration</span></div><div class="flex items-center gap-4"><div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant/50 px-3 py-1 rounded-full"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-mono-sm text-mono-sm text-on-surface font-medium">API online · 6 ONNX models loaded</span></div><div class="h-4 w-[1px] bg-outline-variant/40"></div><div class="flex items-center gap-2"><button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Reload ONNX Engine" type="button"><span class="material-symbols-outlined text-[18px]">refresh</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-14 bg-background min-h-screen"><div class="flex flex-col w-full px-6 py-6 space-y-6">
+<!-- Breadcrumb & Top Bar Readout -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-mono-sm text-mono-sm text-secondary">
+<span>system</span>
+<span>/</span>
+<span class="text-on-surface font-medium">runtime-telemetry</span>
+</div>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Host Node: bench-lab-04</span>
+</div>
+<!-- Live Bench Refresh / Timestamp Trigger -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant/40 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[15px] text-primary">memory</span>
+<span class="font-mono-sm text-mono-sm text-secondary">Inference Memory:</span>
+<span class="font-mono-sm text-mono-sm text-on-surface font-semibold">1,428 MB / 16,384 MB</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm border border-outline-variant/40 hover:bg-surface-container hover:border-outline transition-all active:scale-[0.98]" id="refresh-telemetry-btn">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span>Poll Telemetry</span>
+</button>
+</div>
+</div>
+<!-- SECTION 1: Backend Health Card (Grid of 4 stats) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Stat 1: API Status -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-4 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">API Status</span>
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight flex items-baseline gap-2">
+<span>Online</span>
+<span class="font-mono-sm text-mono-sm text-primary font-medium bg-secondary-container/40 px-1.5 py-0.5 rounded border border-secondary-container">HTTP/2 200 OK</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span class="font-mono-sm text-mono-sm">latency 1.4 ms · zero dropped</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/30 via-primary to-transparent opacity-80"></div>
+</div>
+<!-- Stat 2: System Uptime -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-4 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Uptime</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">timelapse</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight">
+          99.98%
+        </div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-mono-sm text-mono-sm">14d 06h 22m continuous</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container"></div>
+</div>
+<!-- Stat 3: Execution Device -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-4 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Execution Device</span>
+<span class="material-symbols-outlined text-primary text-[18px]">developer_board</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight">
+          CPU · Vectorized
+        </div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="font-mono-sm text-mono-sm truncate">AVX-512 VNNI (4 threads active)</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container"></div>
+</div>
+<!-- Stat 4: ONNX Runtime Version -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-4 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">ONNX Runtime</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight font-mono-lg">
+          v1.17.1
+        </div>
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="font-mono-sm text-mono-sm font-medium">PyTorch 2.2 Parity Verified</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container"></div>
+</div>
+</section>
+<!-- SECTION 2: Loaded ONNX Models Inventory Table -->
+<section class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Panel Header with controls -->
+<div class="px-5 py-3.5 bg-surface-container-low border-b border-outline-variant/30 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">layers</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Loaded ONNX Models Inventory</h2>
+</div>
+<span class="font-mono-sm text-mono-sm px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-medium border border-secondary-container/60">
+          6 Active Tensors
+        </span>
+</div>
+<!-- Quick Search / Filter Bar -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/40 px-2.5 py-1 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">search</span>
+<input class="font-mono-sm text-mono-sm bg-transparent outline-none text-on-surface placeholder:text-secondary w-44" id="model-filter-input" placeholder="Filter models or shapes..." type="text"/>
+</div>
+<div class="flex items-center gap-1 font-mono-sm text-mono-sm text-secondary bg-surface-container px-2 py-1 rounded border border-outline-variant/30">
+<span class="text-on-surface font-semibold">Total:</span> 72.7 MB
+        </div>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse" id="models-table">
+<thead>
+<tr class="bg-surface-container/60 text-secondary font-label-sm text-label-sm uppercase tracking-wider select-none border-b border-outline-variant/30">
+<th class="py-2.5 px-4 font-semibold">Workspace</th>
+<th class="py-2.5 px-4 font-semibold">Model / File Name</th>
+<th class="py-2.5 px-4 font-semibold">File Size</th>
+<th class="py-2.5 px-4 font-semibold">Input Shape</th>
+<th class="py-2.5 px-4 font-semibold">Output Shape</th>
+<th class="py-2.5 px-4 font-semibold">Mean Latency</th>
+<th class="py-2.5 px-4 font-semibold text-right">Parity Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-on-surface font-body-sm text-body-sm" id="models-table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-medium border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Universal Restoration
+              </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] group-hover:text-primary transition-colors">code</span>
+<span class="font-mono-md text-mono-md font-medium text-on-surface">universal_denoising_ae.onnx</span>
+</div>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm text-secondary">
+              14.2 MB
+            </td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">82 ms</span>
+<div class="w-12 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-primary font-mono-sm text-mono-sm font-medium border border-secondary-container/60">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Passed (Δ &lt; 1e-5)</span>
+</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-low/40">
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-medium border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Hard-Routed MoE
+              </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] group-hover:text-primary transition-colors">alt_route</span>
+<span class="font-mono-md text-mono-md font-medium text-on-surface">corruption_classifier_rn18.onnx</span>
+</div>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm text-secondary">
+              4.8 MB
+            </td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 4]
+              </span>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">5 ms</span>
+<div class="w-12 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 8%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-primary font-mono-sm text-mono-sm font-medium border border-secondary-container/60">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Passed (Δ &lt; 1e-5)</span>
+</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-medium border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Hard-Routed MoE
+              </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] group-hover:text-primary transition-colors">grain</span>
+<span class="font-mono-md text-mono-md font-medium text-on-surface">expert_salt_unet.onnx</span>
+</div>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm text-secondary">
+              11.6 MB
+            </td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">68 ms</span>
+<div class="w-12 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-primary font-mono-sm text-mono-sm font-medium border border-secondary-container/60">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Passed (Δ &lt; 1e-5)</span>
+</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-low/40">
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-medium border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Hard-Routed MoE
+              </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] group-hover:text-primary transition-colors">blur_on</span>
+<span class="font-mono-md text-mono-md font-medium text-on-surface">expert_blur_unet.onnx</span>
+</div>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm text-secondary">
+              11.6 MB
+            </td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">71 ms</span>
+<div class="w-12 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 69%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-primary font-mono-sm text-mono-sm font-medium border border-secondary-container/60">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Passed (Δ &lt; 1e-5)</span>
+</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-medium border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Hard-Routed MoE
+              </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] group-hover:text-primary transition-colors">crop_free</span>
+<span class="font-mono-md text-mono-md font-medium text-on-surface">expert_occlusion_unet.onnx</span>
+</div>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm text-secondary">
+              12.1 MB
+            </td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">74 ms</span>
+<div class="w-12 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-primary font-mono-sm text-mono-sm font-medium border border-secondary-container/60">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Passed (Δ &lt; 1e-5)</span>
+</span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-low/40">
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-medium border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                Face-to-Sketch
+              </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] group-hover:text-primary transition-colors">brush</span>
+<span class="font-mono-md text-mono-md font-medium text-on-surface">cgan_sketch_generator.onnx</span>
+</div>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm text-secondary">
+              18.4 MB
+            </td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128] + [1, 3]
+              </span>
+</td>
+<td class="py-3 px-4">
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-on-surface border border-outline-variant/30">
+                [1, 3, 128, 128]
+              </span>
+</td>
+<td class="py-3 px-4 font-mono-sm text-mono-sm">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">21 ms</span>
+<div class="w-12 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-primary font-mono-sm text-mono-sm font-medium border border-secondary-container/60">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Passed (Δ &lt; 1e-5)</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Meta -->
+<div class="px-5 py-2.5 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<div class="flex items-center gap-4">
+<span>Execution Engine: OrtSessionOptions(intra_op_num_threads=4)</span>
+<span>Memory Arena: Enabled</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface">100% Graph Optimizations Applied (Level 3)</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Experiment Tracking & W&B Integration Card -->
+<section class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg shadow-sm p-6 space-y-6">
+<!-- Header with Action -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary border border-outline-variant/30">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Weights &amp; Biases Integration</h2>
+<span class="font-mono-sm text-mono-sm bg-surface-container px-2 py-0.5 rounded text-secondary font-medium border border-outline-variant/30">
+              project: restoration-moe-lab
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            Synchronized hyperparameter optimization run histories, Optuna sweeps, and artifact checkpoints.
+          </p>
+</div>
+</div>
+<!-- Outlined Action Button -->
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-surface-container-lowest text-primary border border-outline-variant/60 font-body-sm text-body-sm font-medium hover:bg-surface-container hover:border-primary transition-all active:scale-[0.98] shadow-sm flex-shrink-0" href="https://wandb.ai" rel="noopener noreferrer" target="_blank">
+<span>Open Weights &amp; Biases project</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- Metric Telemetry Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+<!-- Task 1: Universal Autoencoder -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Task 1</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-medium border border-outline-variant/30">Trial #42</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Universal Autoencoder</h3>
+<p class="font-mono-sm text-mono-sm text-secondary mt-1">Optuna Bayesian Sweep</p>
+</div>
+<div class="space-y-2 pt-2 bg-surface-container-lowest/80 border border-outline-variant/20 p-3 rounded">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Key Metric</span>
+<span class="font-mono-md text-mono-md font-semibold text-primary">31.84 dB</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Learning Rate</span>
+<span class="text-on-surface font-medium">3e-4 (AdamW)</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Total Epochs</span>
+<span class="text-on-surface font-medium">150</span>
+</div>
+</div>
+<!-- Mini Sparkline for Task 1 -->
+<div class="pt-1">
+<div class="flex items-center justify-between text-secondary font-mono-sm text-mono-sm mb-1">
+<span>PSNR Convergence</span>
+<span class="text-primary font-medium">+4.2 dB</span>
+</div>
+<svg class="w-full h-8 text-primary overflow-visible" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,20 Q20,18 35,12 T70,7 T100,2" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,20 Q20,18 35,12 T70,7 T100,2 L100,24 L0,24 Z" fill="currentColor" opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- Task 2: 4-Way Classifier -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Task 2</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-medium border border-outline-variant/30">Trial #19</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">4-Way Classifier</h3>
+<p class="font-mono-sm text-mono-sm text-secondary mt-1">ResNet-18 Backbone</p>
+</div>
+<div class="space-y-2 pt-2 bg-surface-container-lowest/80 border border-outline-variant/20 p-3 rounded">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Key Metric</span>
+<span class="font-mono-md text-mono-md font-semibold text-primary">99.1% Top-1</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Batch Size</span>
+<span class="text-on-surface font-medium">64</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Loss Criterion</span>
+<span class="text-on-surface font-medium">CrossEntropy</span>
+</div>
+</div>
+<!-- Mini Sparkline for Task 2 -->
+<div class="pt-1">
+<div class="flex items-center justify-between text-secondary font-mono-sm text-mono-sm mb-1">
+<span>Accuracy Trend</span>
+<span class="text-primary font-medium">&gt; 99%</span>
+</div>
+<svg class="w-full h-8 text-primary overflow-visible" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,22 Q15,10 30,5 T70,3 T100,2" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,22 Q15,10 30,5 T70,3 T100,2 L100,24 L0,24 Z" fill="currentColor" opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- Task 3: Soft MoE Temperature -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Task 3</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-medium border border-outline-variant/30">Trial #31</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Soft MoE Routing</h3>
+<p class="font-mono-sm text-mono-sm text-secondary mt-1">Temperature Calibration</p>
+</div>
+<div class="space-y-2 pt-2 bg-surface-container-lowest/80 border border-outline-variant/20 p-3 rounded">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Key Metric</span>
+<span class="font-mono-md text-mono-md font-semibold text-primary">τ = 1.06</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Entropy Reg</span>
+<span class="text-on-surface font-medium">λ = 0.015</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Routing Sparsity</span>
+<span class="text-on-surface font-medium">Balanced k=2</span>
+</div>
+</div>
+<!-- Mini Sparkline for Task 3 -->
+<div class="pt-1">
+<div class="flex items-center justify-between text-secondary font-mono-sm text-mono-sm mb-1">
+<span>Softmax Kurtosis</span>
+<span class="text-primary font-medium">τ Optimal</span>
+</div>
+<svg class="w-full h-8 text-primary overflow-visible" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,18 Q30,22 50,6 T75,10 T100,8" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,18 Q30,22 50,6 T75,10 T100,8 L100,24 L0,24 Z" fill="currentColor" opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- Task 4: Face-to-Sketch cGAN -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Task 4</span>
+<span class="font-mono-sm text-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-medium border border-outline-variant/30">Trial #57</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Face-to-Sketch cGAN</h3>
+<p class="font-mono-sm text-mono-sm text-secondary mt-1">Paired Image Synthesis</p>
+</div>
+<div class="space-y-2 pt-2 bg-surface-container-lowest/80 border border-outline-variant/20 p-3 rounded">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Key Metric</span>
+<span class="font-mono-md text-mono-md font-semibold text-primary">FID 14.2</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>LPIPS Score</span>
+<span class="text-on-surface font-medium">0.128 (AlexNet)</span>
+</div>
+<div class="flex items-center justify-between font-mono-sm text-mono-sm text-secondary">
+<span>Adversarial Loss</span>
+<span class="text-on-surface font-medium">LSGAN (MSE)</span>
+</div>
+</div>
+<!-- Mini Sparkline for Task 4 -->
+<div class="pt-1">
+<div class="flex items-center justify-between text-secondary font-mono-sm text-mono-sm mb-1">
+<span>FID Decay (Lower=Better)</span>
+<span class="text-primary font-medium">-38.4</span>
+</div>
+<svg class="w-full h-8 text-primary overflow-visible" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,4 Q25,8 45,14 T80,18 T100,21" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,4 Q25,8 45,14 T80,18 T100,21 L100,24 L0,24 Z" fill="currentColor" opacity="0.12"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Laboratory System Node Diagnostics Strip -->
+<div class="p-3.5 bg-surface-container-low border border-outline-variant/30 rounded-lg flex flex-wrap items-center justify-between text-secondary font-mono-sm text-mono-sm gap-3">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5 text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+          Optuna SQLite Registry: active
+        </span>
+<span class="hidden md:inline">·</span>
+<span>Storage: /var/lab/sweeps/optuna_study.db</span>
+</div>
+<div class="flex items-center gap-4">
+<span>Checkpoints Verified: 6/6</span>
+<span class="text-primary font-semibold">All Hashes Synchronized</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple table filtering micro-interaction
+  const filterInput = document.getElementById('model-filter-input');
+  const tableRows = document.querySelectorAll('#models-table-body tr');
+
+  if (filterInput) {
+    filterInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      tableRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+  }
+
+  // Refresh feedback animation
+  const refreshBtn = document.getElementById('refresh-telemetry-btn');
+  if (refreshBtn) {
+    refreshBtn.addEventListener('click', () => {
+      const icon = refreshBtn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 600);
+      }
+    });
+  }
+</script></main></div></body></html>
