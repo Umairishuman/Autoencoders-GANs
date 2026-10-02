@@ -12,13 +12,31 @@ export default function ImageSource({ kind = 'pets', onSelect }) {
     getSamples(kind).then((d) => setSamples(d.samples || [])).catch(() => {});
   }, [kind]);
 
+  const resizeTo128 = useCallback((file) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 128;
+        canvas.height = 128;
+        canvas.getContext('2d').drawImage(img, 0, 0, 128, 128);
+        canvas.toBlob((blob) => {
+          resolve(new File([blob], file.name, { type: 'image/png' }));
+        }, 'image/png');
+        URL.revokeObjectURL(img.src);
+      };
+      img.src = URL.createObjectURL(file);
+    });
+  }, []);
+
   const handleFile = useCallback(
-    (file) => {
+    async (file) => {
       if (!file) return;
       setSelected(null);
-      onSelect({ file, sample: null, preview: URL.createObjectURL(file), name: file.name });
+      const resized = await resizeTo128(file);
+      onSelect({ file: resized, sample: null, preview: URL.createObjectURL(resized), name: file.name });
     },
-    [onSelect]
+    [onSelect, resizeTo128]
   );
 
   const handleSample = useCallback(
