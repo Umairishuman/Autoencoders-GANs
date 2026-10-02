@@ -1,0 +1,39 @@
+{
+ "mode": "full",
+ "fs2k_root": "/kaggle/input/datasets/umairishuman/fs2k-dataset/FS2K",
+ "n": {
+  "train": 899,
+  "val": 159,
+  "test": 1046
+ },
+ "best_trial": 13,
+ "best_hp": {
+  "g_lr": 0.00027890944284821414,
+  "d_lr": 0.0001739775174167037,
+  "batch_size": 4,
+  "base_channels": 64,
+  "dropout": 0.014671939542728746,
+  "emb_dim": 32,
+  "lambda_l1": 169.00293839679196
+ },
+ "optuna_states": {
+  "COMPLETE": 12,
+  "PRUNED": 8
+ },
+ "test_all": {
+  "l1": 0.11349942535161972,
+  "psnr": 14.896734237670898,
+  "ssim": 0.4489193558692932,
+  "lpips": 0.2032555639743805,
+  "n": 1046.0,
+  "FID": 33.2891845703125
+ },
+ "style_consistency": {
+  "real": 0.9655831739961759,
+  "generated": 0.9913957934990439,
+  "swap": 0.9451880178457617
+ },
+ "onnx_parity_passed": true,
+ "onnx_size_mb": 168.9,
+ "unit_tests_passed": 8
+}

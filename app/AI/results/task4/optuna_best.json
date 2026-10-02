@@ -1,0 +1,81 @@
+{
+ "best_trial": 13,
+ "best_value": 0.6321027080217997,
+ "best_params": {
+  "g_lr": 0.00027890944284821414,
+  "d_lr": 0.0001739775174167037,
+  "batch_size": 4,
+  "base_channels": 64,
+  "dropout": 0.014671939542728746,
+  "emb_dim": 32,
+  "lambda_l1": 169.00293839679196
+ },
+ "user_attrs": {
+  "val_lpips_last": 0.2097855508327484,
+  "val_ssim_last": 0.4737706184387207
+ },
+ "n_trials": 20,
+ "states": {
+  "COMPLETE": 12,
+  "PRUNED": 8
+ },
+ "trial_epochs": 30,
+ "search_space": {
+  "g_lr": {
+   "type": "float",
+   "low": 5e-05,
+   "high": 0.0005,
+   "log": true
+  },
+  "d_lr": {
+   "type": "float",
+   "low": 5e-05,
+   "high": 0.0005,
+   "log": true
+  },
+  "batch_size": {
+   "type": "categorical",
+   "choices": [
+    4,
+    8,
+    16
+   ]
+  },
+  "base_channels": {
+   "type": "categorical",
+   "choices": [
+    32,
+    48,
+    64
+   ]
+  },
+  "dropout": {
+   "type": "float",
+   "low": 0.0,
+   "high": 0.5
+  },
+  "emb_dim": {
+   "type": "categorical",
+   "choices": [
+    8,
+    16,
+    32
+   ]
+  },
+  "lambda_l1": {
+   "type": "float",
+   "low": 10.0,
+   "high": 200.0,
+   "log": true
+  }
+ },
+ "baseline": {
+  "g_lr": 0.0002,
+  "d_lr": 0.0002,
+  "batch_size": 8,
+  "base_channels": 64,
+  "dropout": 0.5,
+  "emb_dim": 16,
+  "lambda_l1": 100.0
+ }
+}

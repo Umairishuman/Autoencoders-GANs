@@ -1,0 +1,5 @@
+setting,style accuracy
+real test sketches (upper bound),0.9655831739961759
+"generated, annotated style",0.9913957934990439
+"generated, every photo x every style",0.9451880178457617
+real validation sketches,1.0

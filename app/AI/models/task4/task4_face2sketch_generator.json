@@ -1,0 +1,63 @@
+{
+ "task": "face_to_sketch",
+ "onnx_file": "task4_face2sketch_generator.onnx",
+ "opset": 17,
+ "styles": {
+  "0": "Style 1",
+  "1": "Style 2",
+  "2": "Style 3"
+ },
+ "inputs": {
+  "photo": "[batch,3,128,128] float32 RGB in [0,1], NCHW",
+  "style": "[batch] int64 in {0,1,2}"
+ },
+ "output": {
+  "sketch": "[batch,3,128,128] float32 RGB in [0,1]"
+ },
+ "preprocess": "PIL convert('RGB') (alpha -> white) -> resize 128x128 BICUBIC -> /255",
+ "generator_config": {
+  "base_channels": 64,
+  "emb_dim": 32,
+  "dropout": 0.014671939542728746,
+  "n_styles": 3
+ },
+ "hyperparameters": {
+  "g_lr": 0.00027890944284821414,
+  "d_lr": 0.0001739775174167037,
+  "batch_size": 4,
+  "base_channels": 64,
+  "dropout": 0.014671939542728746,
+  "emb_dim": 32,
+  "lambda_l1": 169.00293839679196
+ },
+ "onnx_parity": {
+  "Style 1": {
+   "max_abs_diff": 3.0994415283203125e-06,
+   "mean_abs_diff": 6.680475195253166e-08,
+   "passed": true
+  },
+  "Style 2": {
+   "max_abs_diff": 3.039836883544922e-06,
+   "mean_abs_diff": 9.967828873413964e-08,
+   "passed": true
+  },
+  "Style 3": {
+   "max_abs_diff": 1.6093254089355469e-06,
+   "mean_abs_diff": 7.216029729306683e-08,
+   "passed": true
+  }
+ },
+ "cpu_latency_ms": {
+  "median_ms": 25.356156999350787,
+  "p90_ms": 26.308423200043762,
+  "batch": 1
+ },
+ "test_metrics": {
+  "l1": 0.11349942535161972,
+  "psnr": 14.896734237670898,
+  "ssim": 0.4489193558692932,
+  "lpips": 0.2032555639743805,
+  "n": 1046.0,
+  "FID": 33.2891845703125
+ }
+}
