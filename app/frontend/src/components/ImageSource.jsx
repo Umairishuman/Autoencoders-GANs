@@ -5,6 +5,8 @@ export default function ImageSource({ kind = 'pets', onSelect }) {
   const [tab, setTab] = useState('sample');
   const [samples, setSamples] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [uploadPreview, setUploadPreview] = useState(null);
+  const [uploadName, setUploadName] = useState(null);
   const [dragOver, setDragOver] = useState(false);
   const fileRef = useRef(null);
 
@@ -34,7 +36,10 @@ export default function ImageSource({ kind = 'pets', onSelect }) {
       if (!file) return;
       setSelected(null);
       const resized = await resizeTo128(file);
-      onSelect({ file: resized, sample: null, preview: URL.createObjectURL(resized), name: file.name });
+      const previewUrl = URL.createObjectURL(resized);
+      setUploadPreview(previewUrl);
+      setUploadName(file.name);
+      onSelect({ file: resized, sample: null, preview: previewUrl, name: file.name });
     },
     [onSelect, resizeTo128]
   );
