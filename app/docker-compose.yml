@@ -15,7 +15,18 @@ services:
     environment:
       MODELS_DIR: /app/models
       SAMPLES_DIR: /app/backend/samples
-      CORS_ORIGINS: http://localhost:5173,http://localhost:3000,http://localhost:8080
+      CORS_ORIGINS: http://localhost,http://localhost:5173,http://localhost:3000,http://localhost:8080
       MAX_UPLOAD_MB: "10"
     restart: unless-stopped
-  # frontend: added in the next step (React + Tailwind, served by nginx, proxies /api to backend:8000)
+
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    image: restoration-lab-ui
+    container_name: restoration-lab-ui
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
