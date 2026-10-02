@@ -1,0 +1,9 @@
+# Restoration Lab backend (CPU inference with ONNX Runtime; no PyTorch needed)
+fastapi==0.142.2
+uvicorn[standard]==0.46.0
+python-multipart>=0.0.9
+onnxruntime==1.25.0
+onnx==1.23.1          # only used to expose the soft-MoE branch tensor as an extra output at load time
+numpy>=1.26,<3
+pillow>=10.3
+pydantic>=2.7,<3

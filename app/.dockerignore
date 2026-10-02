@@ -1,0 +1,9 @@
+models/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+notebooks/
+frontend/node_modules/
+*.onnx
+*.pth
+.git/

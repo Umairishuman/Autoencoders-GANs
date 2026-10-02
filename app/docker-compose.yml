@@ -1,0 +1,21 @@
+# Restoration Lab — start everything with:   docker compose up --build
+# Models are mounted read-only from ./models (download them first, see README).
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: restoration-lab-api
+    container_name: restoration-lab-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./backend/samples:/app/backend/samples:ro
+    environment:
+      MODELS_DIR: /app/models
+      SAMPLES_DIR: /app/backend/samples
+      CORS_ORIGINS: http://localhost:5173,http://localhost:3000,http://localhost:8080
+      MAX_UPLOAD_MB: "10"
+    restart: unless-stopped
+  # frontend: added in the next step (React + Tailwind, served by nginx, proxies /api to backend:8000)
