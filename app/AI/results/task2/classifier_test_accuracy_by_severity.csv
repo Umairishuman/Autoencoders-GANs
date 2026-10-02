@@ -1,0 +1,11 @@
+type,severity,accuracy,clean,gaussian_blur,occlusion,salt_pepper
+clean,none,0.9907331698010357,0.9907331698010357,0.0038157536113382394,0.005451076587626056,0.0
+gaussian_blur,high,0.9997274461706187,0.0,0.9997274461706187,0.0002725538293813028,0.0
+gaussian_blur,low,1.0,0.0,1.0,0.0,0.0
+gaussian_blur,medium,1.0,0.0,1.0,0.0,0.0
+occlusion,high,1.0,0.0,0.0,1.0,0.0
+occlusion,low,0.9978195693649495,0.0021804306350504225,0.0,0.9978195693649495,0.0
+occlusion,medium,1.0,0.0,0.0,1.0,0.0
+salt_pepper,high,1.0,0.0,0.0,0.0,1.0
+salt_pepper,low,1.0,0.0,0.0,0.0,1.0
+salt_pepper,medium,1.0,0.0,0.0,0.0,1.0

@@ -1,0 +1,95 @@
+{
+ "baseline": {
+  "alpha": 0.8,
+  "base_channels": 32,
+  "batch_size": 32,
+  "dropout": 0.1,
+  "latent_channels": 32,
+  "lr": 0.001,
+  "skip_channels": 4,
+  "skip_levels": 0
+ },
+ "best_params": {
+  "alpha": 0.5443527385126621,
+  "base_channels": 64,
+  "batch_size": 16,
+  "dropout": 0.04766146066116407,
+  "latent_channels": 8,
+  "lr": 0.00042854715308687384,
+  "skip_channels": 2,
+  "skip_levels": 2
+ },
+ "best_trial": 12,
+ "best_value": 0.6624435206254323,
+ "n_trials": 25,
+ "search_space": {
+  "alpha": {
+   "high": 0.95,
+   "low": 0.5,
+   "type": "float"
+  },
+  "base_channels": {
+   "choices": [
+    32,
+    48,
+    64
+   ],
+   "type": "categorical"
+  },
+  "batch_size": {
+   "choices": [
+    16,
+    32,
+    64
+   ],
+   "type": "categorical"
+  },
+  "dropout": {
+   "high": 0.3,
+   "low": 0.0,
+   "type": "float"
+  },
+  "latent_channels": {
+   "choices": [
+    8,
+    16,
+    32,
+    64
+   ],
+   "type": "categorical"
+  },
+  "lr": {
+   "high": 0.003,
+   "log": true,
+   "low": 0.0001,
+   "type": "float"
+  },
+  "skip_channels": {
+   "choices": [
+    2,
+    4,
+    8
+   ],
+   "type": "categorical"
+  },
+  "skip_levels": {
+   "choices": [
+    0,
+    1,
+    2
+   ],
+   "type": "categorical"
+  }
+ },
+ "states": {
+  "COMPLETE": 13,
+  "INVALID (rejected, not trained)": 5,
+  "PRUNED": 7
+ },
+ "user_attrs": {
+  "code_dim": 3072,
+  "score_gaussian_blur": 0.6661395728588104,
+  "score_occlusion": 0.6016261041164398,
+  "score_salt_pepper": 0.7195648849010468
+ }
+}

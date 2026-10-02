@@ -1,0 +1,55 @@
+{
+ "classifier": {
+  "best_trial": 19,
+  "hp": {
+   "batch_size": 64,
+   "channels": "16-32-64-128",
+   "dropout": 0.15456697915226406,
+   "lr": 0.00183835905936748,
+   "weight_decay": 2.1872256676194185e-05
+  },
+  "test": {
+   "acc": 0.9988280185336604,
+   "macro_f1": 0.9980646172605552,
+   "macro_precision": 0.9986569910322011,
+   "macro_recall": 0.9974788770782228
+  },
+  "val": {
+   "acc": 0.9972826086956522,
+   "macro_f1": 0.9972825284300695
+  }
+ },
+ "clean_identity_rate": 0.9907331698010357,
+ "data_source": "attached notebook-00 output: /kaggle/input/notebooks/umairishuman/gen-ai-a1-dataset-preparation",
+ "misrouted_frac": 0.001171981466339602,
+ "mode": "full",
+ "onnx_parity_passed": true,
+ "routing_all_corrupted": {
+  "PSNR input": 19.2551,
+  "PSNR oracle": 24.8604,
+  "PSNR predicted": 24.8627,
+  "PSNR universal (T1)": 24.7203,
+  "SSIM input": 0.6346,
+  "SSIM oracle": 0.8116,
+  "SSIM predicted": 0.8116,
+  "SSIM universal (T1)": 0.8384,
+  "n": 33021.0,
+  "routing acc": 0.9997,
+  "\u0394PSNR pred-oracle": 0.0023
+ },
+ "specialists": {
+  "best_trial": 12,
+  "code_dim": 3072,
+  "hp": {
+   "alpha": 0.5443527385126621,
+   "base_channels": 64,
+   "batch_size": 16,
+   "dropout": 0.04766146066116407,
+   "latent_channels": 8,
+   "lr": 0.00042854715308687384,
+   "skip_channels": 2,
+   "skip_levels": 2
+  }
+ },
+ "unit_tests_passed": 11
+}

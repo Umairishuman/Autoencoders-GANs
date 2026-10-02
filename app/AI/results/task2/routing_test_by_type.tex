@@ -1,0 +1,12 @@
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+ & n & routing acc & PSNR input & SSIM input & PSNR oracle & SSIM oracle & PSNR predicted & SSIM predicted & PSNR universal (T1) & SSIM universal (T1) & ΔPSNR pred-oracle & identity rate & PSNR predicted (misrouted clean only) \\
+type &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+clean & 3669.000 & 0.991 & NaN & 1.000 & NaN & 1.000 & NaN & 0.999 & 26.777 & 0.897 & NaN & 0.991 & 24.482 \\
+salt_pepper & 11007.000 & 1.000 & 16.384 & 0.382 & 27.983 & 0.859 & 27.983 & 0.859 & 26.733 & 0.891 & 0.000 & NaN & NaN \\
+gaussian_blur & 11007.000 & 1.000 & 27.821 & 0.814 & 24.920 & 0.825 & 24.920 & 0.825 & 25.667 & 0.845 & -0.000 & NaN & NaN \\
+occlusion & 11007.000 & 0.999 & 13.560 & 0.708 & 21.678 & 0.751 & 21.685 & 0.751 & 21.760 & 0.779 & 0.007 & NaN & NaN \\
+all corrupted & 33021.000 & 1.000 & 19.255 & 0.635 & 24.860 & 0.812 & 24.863 & 0.812 & 24.720 & 0.838 & 0.002 & NaN & NaN \\
+\bottomrule
+\end{tabular}

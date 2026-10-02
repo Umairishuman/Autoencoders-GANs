@@ -1,0 +1,163 @@
+{
+ "class_names": [
+  "clean",
+  "salt_pepper",
+  "gaussian_blur",
+  "occlusion"
+ ],
+ "classifier_config": {
+  "channels": [
+   16,
+   32,
+   64,
+   128
+  ],
+  "dropout": 0.15456697915226406,
+  "num_classes": 4
+ },
+ "classifier_hp": {
+  "batch_size": 64,
+  "channels": "16-32-64-128",
+  "dropout": 0.15456697915226406,
+  "lr": 0.00183835905936748,
+  "weight_decay": 2.1872256676194185e-05
+ },
+ "classifier_outputs": {
+  "logits": "[batch, 4]",
+  "probs": "[batch, 4] softmax"
+ },
+ "cpu_latency_ms": {
+  "classifier": {
+   "batch": 1,
+   "median_ms": 4.1133035001621465,
+   "p90_ms": 4.629614200894139
+  },
+  "gaussian_blur": {
+   "batch": 1,
+   "median_ms": 106.7928970005596,
+   "p90_ms": 120.8280543998626
+  },
+  "occlusion": {
+   "batch": 1,
+   "median_ms": 105.47692450018076,
+   "p90_ms": 111.3530784014074
+  },
+  "salt_pepper": {
+   "batch": 1,
+   "median_ms": 105.58378000041557,
+   "p90_ms": 110.90276210015872
+  }
+ },
+ "input": {
+  "layout": "NCHW RGB",
+  "name": "input",
+  "preprocess": "PIL convert('RGB') -> resize 128x128 BICUBIC -> /255",
+  "range": [
+   0,
+   1
+  ],
+  "shape": [
+   "batch",
+   3,
+   128,
+   128
+  ]
+ },
+ "onnx_files": {
+  "classifier": "task2_classifier.onnx",
+  "gaussian_blur": "task2_expert_gaussian_blur.onnx",
+  "occlusion": "task2_expert_occlusion.onnx",
+  "salt_pepper": "task2_expert_salt_pepper.onnx"
+ },
+ "onnx_parity": {
+  "classifier": {
+   "argmax_agreement": 1.0,
+   "max_abs_diff_logits": 2.09808349609375e-05,
+   "passed": true
+  },
+  "gaussian_blur": {
+   "passed": true,
+   "test": {
+    "max_abs_diff": 1.0222196578979492e-05,
+    "mean_abs_diff": 3.5181116686544556e-07,
+    "min_psnr_torch_vs_onnx": 100.0,
+    "n_images": 64,
+    "passed": true
+   },
+   "val": {
+    "max_abs_diff": 1.5437602996826172e-05,
+    "mean_abs_diff": 3.555356613560434e-07,
+    "min_psnr_torch_vs_onnx": 100.0,
+    "n_images": 64,
+    "passed": true
+   }
+  },
+  "occlusion": {
+   "passed": true,
+   "test": {
+    "max_abs_diff": 3.260374069213867e-05,
+    "mean_abs_diff": 4.847956347475701e-07,
+    "min_psnr_torch_vs_onnx": 100.0,
+    "n_images": 64,
+    "passed": true
+   },
+   "val": {
+    "max_abs_diff": 1.7762184143066406e-05,
+    "mean_abs_diff": 4.6512198537129734e-07,
+    "min_psnr_torch_vs_onnx": 100.0,
+    "n_images": 64,
+    "passed": true
+   }
+  },
+  "salt_pepper": {
+   "passed": true,
+   "test": {
+    "max_abs_diff": 5.352497100830078e-05,
+    "mean_abs_diff": 4.3065054455837526e-07,
+    "min_psnr_torch_vs_onnx": 100.0,
+    "n_images": 64,
+    "passed": true
+   },
+   "val": {
+    "max_abs_diff": 3.1888484954833984e-05,
+    "mean_abs_diff": 4.5982335450389655e-07,
+    "min_psnr_torch_vs_onnx": 100.0,
+    "n_images": 64,
+    "passed": true
+   }
+  }
+ },
+ "routing": {
+  "clean": "identity",
+  "gaussian_blur": "task2_expert_gaussian_blur.onnx",
+  "occlusion": "task2_expert_occlusion.onnx",
+  "salt_pepper": "task2_expert_salt_pepper.onnx"
+ },
+ "specialist_config": {
+  "base_channels": 64,
+  "depth": 4,
+  "dropout": 0.04766146066116407,
+  "img_size": 128,
+  "latent_channels": 8,
+  "max_mult": 8,
+  "skip_channels": 2,
+  "skip_levels": 2
+ },
+ "specialist_hp": {
+  "alpha": 0.5443527385126621,
+  "base_channels": 64,
+  "batch_size": 16,
+  "dropout": 0.04766146066116407,
+  "latent_channels": 8,
+  "lr": 0.00042854715308687384,
+  "skip_channels": 2,
+  "skip_levels": 2
+ },
+ "task": "hard_routed_restoration",
+ "test_classifier": {
+  "acc": 0.9988280185336604,
+  "macro_f1": 0.9980646172605552,
+  "macro_precision": 0.9986569910322011,
+  "macro_recall": 0.9974788770782228
+ }
+}

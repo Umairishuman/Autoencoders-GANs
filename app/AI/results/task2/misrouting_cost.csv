@@ -1,0 +1,5 @@
+pair,count,mean_d_ssim,mean_d_psnr,worse_than_input
+clean → occlusion,20,-0.17323986,,1.0
+clean → gaussian_blur,14,-0.09511137,,1.0
+occlusion → clean,8,0.06829515,9.453821,0.0
+gaussian_blur → occlusion,1,-0.17744511,-1.1144199,1.0

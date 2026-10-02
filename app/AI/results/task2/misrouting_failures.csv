@@ -1,0 +1,5 @@
+,type,severity,pair,p_max,oracle_ssim,pred_ssim,d_ssim,d_psnr
+5060,clean,none,clean → occlusion,0.99379784,1.0,0.5656117,-0.43438828,
+24860,clean,none,clean → gaussian_blur,0.9812014,1.0,0.80859584,-0.19140416,
+11436,gaussian_blur,high,gaussian_blur → occlusion,0.59855133,0.81920606,0.64176095,-0.17744511,-1.1144199
+7857,occlusion,low,occlusion → clean,0.6041031,0.9291184,0.9197805,-0.009337902,10.637907
