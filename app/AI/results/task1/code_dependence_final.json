@@ -1,0 +1,10 @@
+{
+ "full_psnr": 25.36831283569336,
+ "full_ssim": 0.8586773872375488,
+ "latent_drop_db": 5.633216857910156,
+ "skip_drop_db": 12.25197982788086,
+ "zero_latent_psnr": 19.735095977783203,
+ "zero_latent_ssim": 0.7662951350212097,
+ "zero_skips_psnr": 13.1163330078125,
+ "zero_skips_ssim": 0.320095032453537
+}

@@ -1,0 +1,5 @@
+id,type,severity_level,in_psnr,psnr,d_psnr,in_ssim,ssim
+chihuahua_21__gaussian_blur__high,gaussian_blur,high,22.54467,20.8971,-1.6475697,0.39976326,0.34665212
+german_shorthaired_73__occlusion__high,occlusion,high,11.83701,16.778889,4.9418783,0.5668789,0.42770907
+Sphynx_23__occlusion__low,occlusion,low,81.621994,22.945576,-58.67642,0.9999901,0.83921397
+Birman_55__gaussian_blur__low,gaussian_blur,low,40.8017,12.699823,-28.101877,0.97754204,0.8849403

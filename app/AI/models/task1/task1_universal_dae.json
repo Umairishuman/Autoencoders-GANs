@@ -1,0 +1,117 @@
+{
+ "best_epoch": 71,
+ "code_dim": 6144,
+ "compression_ratio": 8.0,
+ "cpu_latency_ms": {
+  "batch": 1,
+  "median_ms": 67.68837700019503,
+  "p90_ms": 71.35658180031896
+ },
+ "hyperparameters": {
+  "alpha": 0.5202477007155033,
+  "base_channels": 48,
+  "batch_size": 16,
+  "dropout": 0.07129363173203525,
+  "latent_channels": 16,
+  "lr": 0.0007704861433136329,
+  "skip_channels": 4,
+  "skip_levels": 2
+ },
+ "input": {
+  "dtype": "float32",
+  "layout": "NCHW, RGB",
+  "name": "input",
+  "preprocess": "PIL convert('RGB') -> resize 128x128 BICUBIC -> /255",
+  "range": [
+   0,
+   1
+  ],
+  "shape": [
+   "batch",
+   3,
+   128,
+   128
+  ]
+ },
+ "latent_dim": 1024,
+ "latent_shape": [
+  16,
+  8,
+  8
+ ],
+ "model_config": {
+  "base_channels": 48,
+  "depth": 4,
+  "dropout": 0.07129363173203525,
+  "img_size": 128,
+  "latent_channels": 16,
+  "max_mult": 8,
+  "skip_channels": 4,
+  "skip_levels": 2
+ },
+ "onnx_file": "task1_universal_dae.onnx",
+ "onnx_parity": {
+  "test": {
+   "max_abs_diff": 3.6716461181640625e-05,
+   "mean_abs_diff": 4.739979715395748e-07,
+   "min_psnr_torch_vs_onnx": 100.0,
+   "n_images": 64,
+   "passed": true
+  },
+  "val": {
+   "max_abs_diff": 1.8298625946044922e-05,
+   "mean_abs_diff": 4.5752054234071693e-07,
+   "min_psnr_torch_vs_onnx": 100.0,
+   "n_images": 64,
+   "passed": true
+  }
+ },
+ "opset": 17,
+ "output": {
+  "name": "output",
+  "range": [
+   0,
+   1
+  ],
+  "shape": [
+   "batch",
+   3,
+   128,
+   128
+  ]
+ },
+ "params_M": 9.294267,
+ "skip_dim": 5120,
+ "skip_shapes": [
+  [
+   4,
+   16,
+   16
+  ],
+  [
+   4,
+   32,
+   32
+  ]
+ ],
+ "task": "universal_restoration",
+ "val_metrics": {
+  "loss": 0.09015913663998894,
+  "mae": 0.0429721437394619,
+  "mae/clean": 0.040131159126758575,
+  "mae/gaussian_blur": 0.04179173707962036,
+  "mae/occlusion": 0.05291934683918953,
+  "mae/salt_pepper": 0.03704633563756943,
+  "psnr": 25.36775779724121,
+  "psnr/clean": 26.625438690185547,
+  "psnr/gaussian_blur": 26.183801651000977,
+  "psnr/occlusion": 21.697668075561523,
+  "psnr/salt_pepper": 26.964122772216797,
+  "score": 0.7464323878288269,
+  "ssim": 0.8586708307266235,
+  "ssim/clean": 0.8974723815917969,
+  "ssim/gaussian_blur": 0.8743883371353149,
+  "ssim/occlusion": 0.7710369229316711,
+  "ssim/salt_pepper": 0.8917859196662903
+ }
+}

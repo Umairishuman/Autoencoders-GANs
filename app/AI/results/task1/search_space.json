@@ -1,0 +1,59 @@
+{
+ "alpha": {
+  "high": 0.95,
+  "low": 0.5,
+  "type": "float"
+ },
+ "base_channels": {
+  "choices": [
+   32,
+   48,
+   64
+  ],
+  "type": "categorical"
+ },
+ "batch_size": {
+  "choices": [
+   16,
+   32,
+   64
+  ],
+  "type": "categorical"
+ },
+ "dropout": {
+  "high": 0.3,
+  "low": 0.0,
+  "type": "float"
+ },
+ "latent_channels": {
+  "choices": [
+   8,
+   16,
+   32,
+   64
+  ],
+  "type": "categorical"
+ },
+ "lr": {
+  "high": 0.003,
+  "log": true,
+  "low": 0.0001,
+  "type": "float"
+ },
+ "skip_channels": {
+  "choices": [
+   2,
+   4,
+   8
+  ],
+  "type": "categorical"
+ },
+ "skip_levels": {
+  "choices": [
+   0,
+   1,
+   2
+  ],
+  "type": "categorical"
+ }
+}
