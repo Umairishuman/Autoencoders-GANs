@@ -47,6 +47,8 @@ export default function ImageSource({ kind = 'pets', onSelect }) {
   const handleSample = useCallback(
     (s) => {
       setSelected(s.name);
+      setUploadPreview(null);
+      setUploadName(null);
       onSelect({ file: null, sample: s.name, preview: s.url, name: s.name });
     },
     [onSelect]
