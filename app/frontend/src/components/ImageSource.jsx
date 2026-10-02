@@ -90,21 +90,7 @@ export default function ImageSource({ kind = 'pets', onSelect }) {
 
       {/* Upload panel */}
       {tab === 'upload' && (
-        <div
-          className={`flex flex-col items-center justify-center p-6 rounded-lg border border-dashed transition-all cursor-pointer ${
-            dragOver
-              ? 'bg-secondary-container/30 border-primary'
-              : 'bg-surface-container-low/50 border-outline-variant/40 hover:bg-surface-container-low'
-          }`}
-          onClick={() => fileRef.current?.click()}
-          onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-          onDragLeave={() => setDragOver(false)}
-          onDrop={(e) => {
-            e.preventDefault();
-            setDragOver(false);
-            handleFile(e.dataTransfer.files[0]);
-          }}
-        >
+        <>
           <input
             ref={fileRef}
             type="file"
@@ -112,17 +98,57 @@ export default function ImageSource({ kind = 'pets', onSelect }) {
             className="hidden"
             onChange={(e) => handleFile(e.target.files[0])}
           />
-          <div className="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center text-primary mb-2">
-            <span className="material-symbols-outlined text-[22px]">add_photo_alternate</span>
-          </div>
-          <p className="text-[13px] text-on-surface text-center font-medium">
-            Drag & drop image or browse
-          </p>
-          <p className="font-mono text-[11px] text-secondary mt-1">Resized to 128×128 RGB on ingest</p>
-          <span className="mt-3 inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[11px] border border-outline-variant/30">
-            JPG / PNG / WEBP
-          </span>
-        </div>
+          {uploadPreview ? (
+            <div className="flex flex-col items-center gap-3 p-4 rounded-lg bg-surface-container-low/50 border border-primary/30">
+              <div className="relative w-32 h-32 rounded-lg overflow-hidden ring-2 ring-primary ring-offset-2 ring-offset-surface-container-lowest shadow-md">
+                <img src={uploadPreview} alt={uploadName} className="w-full h-full object-cover" />
+                <div className="absolute top-1 right-1">
+                  <span className="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shadow">
+                    <span className="material-symbols-outlined text-[14px]">check</span>
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[11px] text-on-surface font-medium truncate max-w-[140px]">{uploadName}</span>
+                <span className="font-mono text-[10px] text-secondary">128×128</span>
+              </div>
+              <button
+                onClick={() => fileRef.current?.click()}
+                className="px-3 py-1.5 rounded-md text-[12px] font-medium text-primary hover:bg-primary/10 transition-colors flex items-center gap-1.5 border border-primary/30"
+              >
+                <span className="material-symbols-outlined text-[16px]">swap_horiz</span>
+                Change image
+              </button>
+            </div>
+          ) : (
+            <div
+              className={`flex flex-col items-center justify-center p-6 rounded-lg border border-dashed transition-all cursor-pointer ${
+                dragOver
+                  ? 'bg-secondary-container/30 border-primary'
+                  : 'bg-surface-container-low/50 border-outline-variant/40 hover:bg-surface-container-low'
+              }`}
+              onClick={() => fileRef.current?.click()}
+              onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+              onDragLeave={() => setDragOver(false)}
+              onDrop={(e) => {
+                e.preventDefault();
+                setDragOver(false);
+                handleFile(e.dataTransfer.files[0]);
+              }}
+            >
+              <div className="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center text-primary mb-2">
+                <span className="material-symbols-outlined text-[22px]">add_photo_alternate</span>
+              </div>
+              <p className="text-[13px] text-on-surface text-center font-medium">
+                Drag & drop image or browse
+              </p>
+              <p className="font-mono text-[11px] text-secondary mt-1">Resized to 128×128 RGB on ingest</p>
+              <span className="mt-3 inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[11px] border border-outline-variant/30">
+                JPG / PNG / WEBP
+              </span>
+            </div>
+          )}
+        </>
       )}
 
       {/* Sample thumbnails */}
