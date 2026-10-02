@@ -1,0 +1,102 @@
+{
+ "branches": [
+  "identity",
+  "A_salt",
+  "A_blur",
+  "A_occ"
+ ],
+ "cpu_latency_ms": {
+  "batch": 1,
+  "median_ms": 412.22481800014066,
+  "p90_ms": 423.40421929930017
+ },
+ "expert_configs": [
+  {
+   "base_channels": 64,
+   "depth": 4,
+   "dropout": 0.04766146066116407,
+   "img_size": 128,
+   "latent_channels": 8,
+   "max_mult": 8,
+   "skip_channels": 2,
+   "skip_levels": 2
+  },
+  {
+   "base_channels": 64,
+   "depth": 4,
+   "dropout": 0.04766146066116407,
+   "img_size": 128,
+   "latent_channels": 8,
+   "max_mult": 8,
+   "skip_channels": 2,
+   "skip_levels": 2
+  },
+  {
+   "base_channels": 64,
+   "depth": 4,
+   "dropout": 0.04766146066116407,
+   "img_size": 128,
+   "latent_channels": 8,
+   "max_mult": 8,
+   "skip_channels": 2,
+   "skip_levels": 2
+  }
+ ],
+ "gate_config": {
+  "channels": [
+   16,
+   32,
+   64,
+   128
+  ],
+  "dropout": 0.15456697915226406,
+  "num_classes": 4
+ },
+ "hyperparameters": {
+  "alpha": 0.5182343054655343,
+  "joint_lr": 1.590479650247364e-05,
+  "lambda_b": 0.009478819034367123,
+  "lambda_c": 0.01447295565521209,
+  "tau": 1.0631949553148388
+ },
+ "input": {
+  "layout": "NCHW RGB",
+  "name": "input",
+  "preprocess": "PIL convert('RGB') -> resize 128x128 BICUBIC -> /255",
+  "range": [
+   0,
+   1
+  ],
+  "shape": [
+   "batch",
+   3,
+   128,
+   128
+  ]
+ },
+ "onnx_file": "task3_soft_moe.onnx",
+ "onnx_parity": {
+  "test": {
+   "argmax_agreement": 1.0,
+   "max_abs_diff_output": 6.99162483215332e-05,
+   "max_abs_diff_weights": 1.3932585716247559e-06,
+   "n": 64,
+   "passed": true
+  },
+  "val": {
+   "argmax_agreement": 1.0,
+   "max_abs_diff_output": 1.71661376953125e-05,
+   "max_abs_diff_weights": 1.430511474609375e-06,
+   "n": 64,
+   "passed": true
+  }
+ },
+ "opset": 17,
+ "outputs": {
+  "logits": "[batch,4] gate logits G(x) (before /tau)",
+  "output": "[batch,3,128,128] restored image in [0,1]",
+  "weights": "[batch,4] routing weights w0..w3 (sum to 1)"
+ },
+ "task": "soft_moe_restoration",
+ "tau": 1.063194990158081
+}

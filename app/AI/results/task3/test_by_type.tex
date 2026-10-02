@@ -1,0 +1,12 @@
+\begin{tabular}{lrrrrrrrrrrrrrr}
+\toprule
+ & n & PSNR input & SSIM input & PSNR hard (pred.) & SSIM hard (pred.) & PSNR hard (oracle) & SSIM hard (oracle) & PSNR soft MoE & SSIM soft MoE & PSNR universal (T1) & SSIM universal (T1) & ΔSSIM soft-hard & gate acc (soft) & clf acc (T2) \\
+type &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+clean & 3669.000 & NaN & 1.000 & NaN & 0.999 & NaN & 1.000 & 69.499 & 1.000 & 26.777 & 0.897 & 0.001 & 1.000 & 0.991 \\
+salt_pepper & 11007.000 & 16.384 & 0.382 & 27.983 & 0.859 & 27.983 & 0.859 & 28.077 & 0.862 & 26.733 & 0.891 & 0.002 & 1.000 & 1.000 \\
+gaussian_blur & 11007.000 & 27.821 & 0.814 & 24.920 & 0.825 & 24.920 & 0.825 & 27.065 & 0.856 & 25.667 & 0.845 & 0.031 & 0.687 & 1.000 \\
+occlusion & 11007.000 & 13.560 & 0.708 & 21.685 & 0.751 & 21.678 & 0.751 & 21.637 & 0.788 & 21.760 & 0.779 & 0.038 & 0.857 & 0.999 \\
+all corrupted & 33021.000 & 19.255 & 0.635 & 24.863 & 0.812 & 24.860 & 0.812 & 25.593 & 0.835 & 24.720 & 0.838 & 0.024 & 0.848 & 1.000 \\
+\bottomrule
+\end{tabular}

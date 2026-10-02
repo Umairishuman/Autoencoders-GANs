@@ -1,0 +1,5 @@
+id,type,severity,hard_ssim,soft_ssim,w_0,w_1,w_2,w_3
+chihuahua_21__gaussian_blur__high,gaussian_blur,high,0.33913156,0.34089684,0.15987563,1.7575707e-07,0.839862,0.0002621893
+Bengal_19__occlusion__high,occlusion,high,0.45702162,0.4760732,0.19527979,0.00021714639,0.00028709145,0.80421597
+Egyptian_Mau_45__salt_pepper__low,salt_pepper,low,0.9606881,0.87380695,0.12901412,0.87009287,1.1152512e-05,0.0008818024
+shiba_inu_75__occlusion__high,occlusion,high,0.7544821,0.6679598,0.26491386,0.00047058967,0.00095982896,0.7336557

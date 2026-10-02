@@ -1,0 +1,60 @@
+{
+ "baseline": {
+  "alpha": 0.8,
+  "joint_lr": 0.0001,
+  "lambda_b": 0.01,
+  "lambda_c": 0.1,
+  "tau": 1.0
+ },
+ "batch_size": 32,
+ "best_params": {
+  "alpha": 0.5182343054655343,
+  "joint_lr": 1.590479650247364e-05,
+  "lambda_b": 0.009478819034367123,
+  "lambda_c": 0.01447295565521209,
+  "tau": 1.0631949553148388
+ },
+ "best_trial": 13,
+ "best_value": 0.8018237605690955,
+ "n_trials": 15,
+ "search_space": {
+  "alpha": {
+   "high": 0.95,
+   "low": 0.5,
+   "type": "float"
+  },
+  "joint_lr": {
+   "high": 0.0003,
+   "log": true,
+   "low": 1e-05,
+   "type": "float"
+  },
+  "lambda_b": {
+   "high": 0.3,
+   "log": true,
+   "low": 0.001,
+   "type": "float"
+  },
+  "lambda_c": {
+   "high": 1.0,
+   "log": true,
+   "low": 0.01,
+   "type": "float"
+  },
+  "tau": {
+   "high": 3.0,
+   "log": true,
+   "low": 0.5,
+   "type": "float"
+  }
+ },
+ "states": {
+  "COMPLETE": 15
+ },
+ "user_attrs": {
+  "val_gate_acc": 0.9442934782608695,
+  "val_psnr": 40.42463302612305,
+  "val_ssim": 0.8710818290710449
+ },
+ "warm_lr": 0.0005
+}

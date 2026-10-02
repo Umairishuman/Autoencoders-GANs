@@ -1,0 +1,73 @@
+{
+ "best_hp": {
+  "alpha": 0.5182343054655343,
+  "joint_lr": 1.590479650247364e-05,
+  "lambda_b": 0.009478819034367123,
+  "lambda_c": 0.01447295565521209,
+  "tau": 1.0631949553148388
+ },
+ "best_step": 17,
+ "best_trial": 13,
+ "compound": {
+  "hard_ssim": {
+   "gaussian_blur + occlusion": 0.6937999725341797,
+   "salt_pepper + gaussian_blur": 0.5565999746322632,
+   "salt_pepper + occlusion": 0.4659999907016754
+  },
+  "soft better than hard (SSIM)": {
+   "gaussian_blur + occlusion": 0.47,
+   "salt_pepper + gaussian_blur": 0.73,
+   "salt_pepper + occlusion": 0.01
+  },
+  "soft_ssim": {
+   "gaussian_blur + occlusion": 0.6933000087738037,
+   "salt_pepper + gaussian_blur": 0.5616000294685364,
+   "salt_pepper + occlusion": 0.26579999923706055
+  }
+ },
+ "data_source": "attached notebook-00 output: /kaggle/input/notebooks/umairishuman/gen-ai-a1-dataset-preparation",
+ "final_val_score": 0.8062722772359848,
+ "initial_val_score": 0.7911540746688843,
+ "mode": "full",
+ "onnx_parity_passed": true,
+ "optuna_states": {
+  "COMPLETE": 15
+ },
+ "routing": {
+  "distributed_frac": 0.06514036522213137,
+  "dominant_frac": 0.506486781139275,
+  "dominating_unrelated": [
+   "identity on gaussian_blur"
+  ],
+  "inactive": [],
+  "usage": {
+   "A_blur": 0.19220000505447388,
+   "A_occ": 0.2264000028371811,
+   "A_salt": 0.2955999970436096,
+   "identity": 0.2858000099658966
+  }
+ },
+ "task2_sources": {
+  "1": "/kaggle/input/notebooks/umairishuman/gen-ai-a1-task-2/checkpoints/task2/task2_expert_salt_pepper_best.pth",
+  "2": "/kaggle/input/notebooks/umairishuman/gen-ai-a1-task-2/checkpoints/task2/task2_expert_gaussian_blur_best.pth",
+  "3": "/kaggle/input/notebooks/umairishuman/gen-ai-a1-task-2/checkpoints/task2/task2_expert_occlusion_best.pth",
+  "classifier": "/kaggle/input/notebooks/umairishuman/gen-ai-a1-task-2/checkpoints/task2/task2_classifier_best.pth"
+ },
+ "test_all_corrupted": {
+  "PSNR hard (oracle)": 24.8604,
+  "PSNR hard (pred.)": 24.8627,
+  "PSNR input": 19.2551,
+  "PSNR soft MoE": 25.5933,
+  "PSNR universal (T1)": 24.7203,
+  "SSIM hard (oracle)": 0.8116,
+  "SSIM hard (pred.)": 0.8116,
+  "SSIM input": 0.6346,
+  "SSIM soft MoE": 0.8353,
+  "SSIM universal (T1)": 0.8384,
+  "clf acc (T2)": 0.9997,
+  "gate acc (soft)": 0.8479,
+  "n": 33021.0,
+  "\u0394SSIM soft-hard": 0.0237
+ },
+ "unit_tests_passed": 9
+}
