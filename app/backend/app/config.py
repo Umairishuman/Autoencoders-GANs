@@ -6,7 +6,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
-MODELS_DIR = Path(os.environ.get("MODELS_DIR", REPO_ROOT / "models"))
+MODELS_DIR = Path(os.environ.get("MODELS_DIR", REPO_ROOT / "AI" / "models"))
 SAMPLES_DIR = Path(os.environ.get("SAMPLES_DIR", REPO_ROOT / "backend" / "samples"))
 MAX_UPLOAD_MB = float(os.environ.get("MAX_UPLOAD_MB", "10"))
 CORS_ORIGINS = [o.strip() for o in os.environ.get("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000,http://localhost:8080").split(",") if o.strip()]

@@ -62,12 +62,25 @@ class Registry:
         m.graph.output.append(onnx.helper.make_tensor_value_info("branches", onnx.TensorProto.FLOAT, None))
         return ort.InferenceSession(m.SerializeToString(), self._options(), providers=["CPUExecutionProvider"])
 
+    @staticmethod
+    def _find(fname: str) -> "Path | None":
+        """Search MODELS_DIR and its immediate subdirectories for *fname*."""
+        direct = config.MODELS_DIR / fname
+        if direct.exists():
+            return direct
+        for sub in sorted(config.MODELS_DIR.iterdir()):
+            if sub.is_dir():
+                p = sub / fname
+                if p.exists():
+                    return p
+        return None
+
     def load(self):
         for role, fname in config.MODEL_FILES.items():
-            path = config.MODELS_DIR / fname
+            path = self._find(fname)
             lm = LoadedModel(role=role, file=fname)
-            if not path.exists():
-                lm.error = f"missing file {path}"
+            if path is None:
+                lm.error = f"missing file {fname} in {config.MODELS_DIR}"
                 log.warning(lm.error)
                 self.models[role] = lm
                 continue
@@ -89,8 +102,8 @@ class Registry:
                 log.exception("failed to load %s", fname)
             self.models[role] = lm
         for key, fname in config.SIDECARS.items():
-            p = config.MODELS_DIR / fname
-            if p.exists():
+            p = self._find(fname)
+            if p is not None:
                 try:
                     self.sidecars[key] = json.loads(p.read_text())
                 except Exception as e:

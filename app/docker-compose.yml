@@ -10,10 +10,10 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./models:/app/models:ro
+      - ./AI/models:/app/AI/models:ro
       - ./backend/samples:/app/backend/samples:ro
     environment:
-      MODELS_DIR: /app/models
+      MODELS_DIR: /app/AI/models
       SAMPLES_DIR: /app/backend/samples
       CORS_ORIGINS: http://localhost,http://localhost:5173,http://localhost:3000,http://localhost:8080
       MAX_UPLOAD_MB: "10"
