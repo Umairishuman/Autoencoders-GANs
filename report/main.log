@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.3)  3 OCT 2026 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.3)  3 OCT 2026 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,18 +492,6 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count324
 ) (main.aux)
-Runaway argument?
-{\contentsline {subsection}{\numberline {\mbox {VII-D}}Results}{5}{su\ETC.
-! File ended while scanning use of \@writefile.
-<inserted text> 
-                \par 
-l.20 \begin{document}
-                     
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -524,6 +512,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
+
 -- Lines per column: 56 (exact).
 
 (C:\Users\Pc Planet\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pd
@@ -552,32 +541,7 @@ ys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 20.
- (main.out)
-Runaway argument?
-{ 
-! File ended while scanning use of \@@BOOKMARK.
-<inserted text> 
-                \par 
-l.20 \begin{document}
-                     
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
-(main.out)
-Runaway argument?
-{ 
-! File ended while scanning use of \@@BOOKMARK.
-<inserted text> 
-                \par 
-l.20 \begin{document}
-                     
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
+ (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -585,6 +549,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+
 
 (C:\Users\Pc Planet\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -595,22 +560,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
 (C:\Users\Pc Planet\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `vincent2008' on page 1 undefined on input line 38.
-
-
-LaTeX Warning: Citation `wang2004ssim' on page 1 undefined on input line 38.
-
-
-LaTeX Warning: Citation `shazeer2017' on page 1 undefined on input line 40.
-
-
-LaTeX Warning: Citation `isola2017' on page 1 undefined on input line 42.
-
-
-LaTeX Warning: Citation `dumoulin2017' on page 1 undefined on input line 42.
-
-
 Underfull \hbox (badness 2951) in paragraph at lines 57--58
 []\OT1/ptm/b/n/10 Gaussian blur\OT1/ptm/m/n/10 : ker-nel size from $\OMS/cmsy/m
 /n/10 f\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; 
@@ -623,7 +572,7 @@ s/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-<../app/AI/figures/task1/optuna_history.png, id=118, 494.01707pt x 317.988pt>
+<../app/AI/figures/task1/optuna_history.png, id=192, 494.01707pt x 317.988pt>
 File: ../app/AI/figures/task1/optuna_history.png Graphic file (type png)
 <use ../app/AI/figures/task1/optuna_history.png>
 Package pdftex.def Info: ../app/AI/figures/task1/optuna_history.png  used on in
@@ -633,7 +582,7 @@ put line 128.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task1/optuna_importance.png, id=120, 508.47107pt x 314.89072
+<../app/AI/figures/task1/optuna_importance.png, id=194, 508.47107pt x 314.89072
 pt>
 File: ../app/AI/figures/task1/optuna_importance.png Graphic file (type png)
 <use ../app/AI/figures/task1/optuna_importance.png>
@@ -649,7 +598,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task1/training_curves.png, id=121, 1084.05pt x 274.626pt>
+<../app/AI/figures/task1/training_curves.png, id=195, 1084.05pt x 274.626pt>
 File: ../app/AI/figures/task1/training_curves.png Graphic file (type png)
 <use ../app/AI/figures/task1/training_curves.png>
 Package pdftex.def Info: ../app/AI/figures/task1/training_curves.png  used on i
@@ -658,7 +607,7 @@ nput line 189.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task1/test_representative_1.png, id=122, 606.1044pt x 912.04
+<../app/AI/figures/task1/test_representative_1.png, id=196, 606.1044pt x 912.04
 74pt>
 File: ../app/AI/figures/task1/test_representative_1.png Graphic file (type png)
 
@@ -669,7 +618,7 @@ d on input line 196.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task1/test_severity_curves.png, id=123, 867.24pt x 274.626pt
+<../app/AI/figures/task1/test_severity_curves.png, id=197, 867.24pt x 274.626pt
 >
 File: ../app/AI/figures/task1/test_severity_curves.png Graphic file (type png)
 <use ../app/AI/figures/task1/test_severity_curves.png>
@@ -679,7 +628,7 @@ Package pdftex.def Info: ../app/AI/figures/task1/test_severity_curves.png  used
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task1/test_failure_cases.png, id=124, 619.5948pt x 615.7404p
+<../app/AI/figures/task1/test_failure_cases.png, id=198, 619.5948pt x 615.7404p
 t>
 File: ../app/AI/figures/task1/test_failure_cases.png Graphic file (type png)
 <use ../app/AI/figures/task1/test_failure_cases.png>
@@ -700,7 +649,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task2/classifier_confusion.png, id=139, 640.3122pt x 312.206
+<../app/AI/figures/task2/classifier_confusion.png, id=213, 640.3122pt x 312.206
 4pt>
 File: ../app/AI/figures/task2/classifier_confusion.png Graphic file (type png)
 <use ../app/AI/figures/task2/classifier_confusion.png>
@@ -713,7 +662,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task2/routing_representative.png, id=140, 847.10764pt x 1778
+<../app/AI/figures/task2/routing_representative.png, id=214, 847.10764pt x 1778
 .35822pt>
 File: ../app/AI/figures/task2/routing_representative.png Graphic file (type png
 )
@@ -724,7 +673,7 @@ ed on input line 327.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task2/misrouting_failures.png, id=141, 844.52657pt x 711.343
+<../app/AI/figures/task2/misrouting_failures.png, id=215, 844.52657pt x 711.343
 29pt>
 File: ../app/AI/figures/task2/misrouting_failures.png Graphic file (type png)
 <use ../app/AI/figures/task2/misrouting_failures.png>
@@ -745,7 +694,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task3/routing_heatmap.png, id=154, 932.7648pt x 338.2236pt>
+<../app/AI/figures/task3/routing_heatmap.png, id=228, 932.7648pt x 338.2236pt>
 File: ../app/AI/figures/task3/routing_heatmap.png Graphic file (type png)
 <use ../app/AI/figures/task3/routing_heatmap.png>
 Package pdftex.def Info: ../app/AI/figures/task3/routing_heatmap.png  used on i
@@ -754,7 +703,7 @@ nput line 416.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task3/routing_weight_distributions.png, id=155, 1156.32pt x 
+<../app/AI/figures/task3/routing_weight_distributions.png, id=229, 1156.32pt x 
 245.718pt>
 File: ../app/AI/figures/task3/routing_weight_distributions.png Graphic file (ty
 pe png)
@@ -768,7 +717,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task3/examples_representative.png, id=156, 925.056pt x 1777.
+<../app/AI/figures/task3/examples_representative.png, id=230, 925.056pt x 1777.
 32579pt>
 File: ../app/AI/figures/task3/examples_representative.png Graphic file (type pn
 g)
@@ -779,7 +728,7 @@ sed on input line 451.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task3/examples_failures.png, id=157, 922.47493pt x 711.34329
+<../app/AI/figures/task3/examples_failures.png, id=231, 922.47493pt x 711.34329
 pt>
 File: ../app/AI/figures/task3/examples_failures.png Graphic file (type png)
 <use ../app/AI/figures/task3/examples_failures.png>
@@ -797,7 +746,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task4/training_curves.png, id=175, 1373.13pt x 260.172pt>
+<../app/AI/figures/task4/training_curves.png, id=248, 1373.13pt x 260.172pt>
 File: ../app/AI/figures/task4/training_curves.png Graphic file (type png)
 <use ../app/AI/figures/task4/training_curves.png>
 Package pdftex.def Info: ../app/AI/figures/task4/training_curves.png  used on i
@@ -806,7 +755,7 @@ nput line 529.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task4/test_examples.png, id=176, 470.86685pt x 1951.84592pt>
+<../app/AI/figures/task4/test_examples.png, id=249, 470.86685pt x 1951.84592pt>
 
 File: ../app/AI/figures/task4/test_examples.png Graphic file (type png)
 <use ../app/AI/figures/task4/test_examples.png>
@@ -819,7 +768,7 @@ LaTeX Warning: Float too large for page by 406.1996pt on input line 539.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task4/style_swap.png, id=177, 788.29892pt x 977.31277pt>
+<../app/AI/figures/task4/style_swap.png, id=250, 788.29892pt x 977.31277pt>
 File: ../app/AI/figures/task4/style_swap.png Graphic file (type png)
 <use ../app/AI/figures/task4/style_swap.png>
 Package pdftex.def Info: ../app/AI/figures/task4/style_swap.png  used on input 
@@ -828,7 +777,7 @@ line 543.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../app/AI/figures/task4/test_failures.png, id=178, 470.86685pt x 975.645pt>
+<../app/AI/figures/task4/test_failures.png, id=251, 470.86685pt x 975.645pt>
 File: ../app/AI/figures/task4/test_failures.png Graphic file (type png)
 <use ../app/AI/figures/task4/test_failures.png>
 Package pdftex.def Info: ../app/AI/figures/task4/test_failures.png  used on inp
@@ -842,7 +791,7 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
 (C:\Users\Pc Planet\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<../Designs/universal-restoration/screen.png, id=179, 1509.64pt x 1606.0pt>
+<../Designs/universal-restoration/screen.png, id=252, 1509.64pt x 1606.0pt>
 File: ../Designs/universal-restoration/screen.png Graphic file (type png)
 <use ../Designs/universal-restoration/screen.png>
 Package pdftex.def Info: ../Designs/universal-restoration/screen.png  used on i
@@ -852,7 +801,7 @@ nput line 574.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Designs/hard-routed-restoration/screen.png, id=180, 1606.0pt x 1604.99625pt
+<../Designs/hard-routed-restoration/screen.png, id=253, 1606.0pt x 1604.99625pt
 >
 File: ../Designs/hard-routed-restoration/screen.png Graphic file (type png)
 <use ../Designs/hard-routed-restoration/screen.png>
@@ -862,7 +811,7 @@ Package pdftex.def Info: ../Designs/hard-routed-restoration/screen.png  used on
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Designs/soft-mixture-of-experts-restoratoin/screen.png, id=181, 1606.0pt x 
+<../Designs/soft-mixture-of-experts-restoratoin/screen.png, id=254, 1606.0pt x 
 1698.345pt>
 File: ../Designs/soft-mixture-of-experts-restoratoin/screen.png Graphic file (t
 ype png)
@@ -873,7 +822,7 @@ png  used on input line 588.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Designs/face-to-sketch/screen.png, id=182, 1606.0pt x 1505.625pt>
+<../Designs/face-to-sketch/screen.png, id=255, 1606.0pt x 1505.625pt>
 File: ../Designs/face-to-sketch/screen.png Graphic file (type png)
 <use ../Designs/face-to-sketch/screen.png>
 Package pdftex.def Info: ../Designs/face-to-sketch/screen.png  used on input li
@@ -917,27 +866,14 @@ o-sketch/screen.png>] (main.aux)
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 9E55875A8E2D22A3DCA8AF86E7F9ECE0;4096
-(rerunfilecheck)             After:  F54CA5844357E01A9D2D757031DB1413;6056.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: F54CA5844357E01A9D2D757031DB1413;6056.
  ) 
 Here is how much of TeX's memory you used:
- 13029 strings out of 467871
- 215875 string characters out of 5416404
- 651468 words of memory out of 5000000
- 41655 multiletter control sequences out of 15000+600000
+ 13045 strings out of 467871
+ 216105 string characters out of 5416404
+ 653433 words of memory out of 5000000
+ 41671 multiletter control sequences out of 15000+600000
  668415 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,79p,872b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -962,9 +898,9 @@ tmb8a.pfb><C:/Users/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Users/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/type1/ur
 w/times/utmr8a.pfb><C:/Users/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 28882017 bytes).
+Output written on main.pdf (11 pages, 28887589 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
+ 421 PDF objects out of 1000 (max. 8388607)
  100 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 426 words of extra memory for PDF output out of 10000 (max. 10000000)
 
