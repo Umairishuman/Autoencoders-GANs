@@ -1,0 +1,124 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{vincent2008}
+\citation{wang2004ssim}
+\citation{shazeer2017}
+\citation{isola2017}
+\citation{dumoulin2017}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Dataset Preparation}{1}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Oxford-IIIT Pet Dataset (Tasks 1--3)}{1}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-A}1}Corruption Pipeline}{1}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Test Set Corruption Severity Levels}}{1}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:severity}{{I}{1}{Test Set Corruption Severity Levels}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}FS2K Dataset (Task 4)}{1}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Task 1: Universal Multi-Corruption Denoising Autoencoder}{2}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Architecture}{2}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Loss Function}{2}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Hyperparameter Optimization}{2}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Task 1 Optuna Search Space and Best Configuration}}{2}{table.caption.2}\protected@file@percent }
+\newlabel{tab:t1optuna}{{II}{2}{Task 1 Optuna Search Space and Best Configuration}{table.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Results}{2}{subsection.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Task 1 Optuna optimization history.}}{2}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:t1optuna}{{1}{2}{Task 1 Optuna optimization history}{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Task 1 hyperparameter importance analysis.}}{2}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:t1importance}{{2}{2}{Task 1 hyperparameter importance analysis}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Skip Connection Ablation}{2}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}ONNX Export}{2}{subsection.4.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Task 1 — Test Results by Corruption Type}}{3}{table.caption.5}\protected@file@percent }
+\newlabel{tab:t1results}{{III}{3}{Task 1 — Test Results by Corruption Type}{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Task 1 — Test Results by Severity Level}}{3}{table.caption.6}\protected@file@percent }
+\newlabel{tab:t1severity}{{IV}{3}{Task 1 — Test Results by Severity Level}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Task 2: Hard-Routed Specialist Restoration}{3}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Corruption Classifier}{3}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}1}Optuna Search}{3}{table.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}2}Classifier Results}{3}{figure.caption.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Specialist Autoencoders}{3}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Hard-Routed Inference Results}{3}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Task 1 training and validation curves.}}{3}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:t1curves}{{3}{3}{Task 1 training and validation curves}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Task 1 representative restoration results: clean target, corrupted input, restored output, and absolute error map.}}{3}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:t1examples}{{4}{3}{Task 1 representative restoration results: clean target, corrupted input, restored output, and absolute error map}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Task 1 PSNR and SSIM across corruption severity levels.}}{4}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:t1severity_curves}{{5}{4}{Task 1 PSNR and SSIM across corruption severity levels}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Task 1 failure cases showing difficult restoration scenarios.}}{4}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:t1failures}{{6}{4}{Task 1 failure cases showing difficult restoration scenarios}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Task 3: Soft Mixture-of-Experts Restoration}{4}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Architecture}{4}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Joint Training Procedure}{4}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Skip Connection Ablation Study}}{4}{table.caption.11}\protected@file@percent }
+\newlabel{tab:skipablation}{{V}{4}{Skip Connection Ablation Study}{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Classifier Optuna Search Space and Best Configuration}}{4}{table.caption.12}\protected@file@percent }
+\newlabel{tab:t2clfoptuna}{{VI}{4}{Classifier Optuna Search Space and Best Configuration}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Optuna Search}{4}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Routing Behavior}{4}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Results}{4}{subsection.6.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Classifier Test Performance (Per-Class)}}{5}{table.caption.13}\protected@file@percent }
+\newlabel{tab:t2clfresults}{{VII}{5}{Classifier Test Performance (Per-Class)}{table.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Task 2 normalized confusion matrix for the corruption classifier.}}{5}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:t2confusion}{{7}{5}{Task 2 normalized confusion matrix for the corruption classifier}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Task 4: Style-Conditioned Face-to-Sketch Generation}{5}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Architecture}{5}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Loss Functions}{5}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Optuna Search}{5}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-D}}Results}{5}{subsection.7.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Task 2 — Hard-Routed Test Results}}{5}{table.caption.15}\protected@file@percent }
+\newlabel{tab:t2routing}{{VIII}{5}{Task 2 — Hard-Routed Test Results}{table.caption.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Task 3 Optuna Search Space and Best Configuration}}{5}{table.caption.18}\protected@file@percent }
+\newlabel{tab:t3optuna}{{IX}{5}{Task 3 Optuna Search Space and Best Configuration}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-E}}ONNX Export}{5}{subsection.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Application Architecture}{5}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}UI Design}{5}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-B}}Frontend}{5}{subsection.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Task 2 hard-routed restoration examples showing classifier prediction and specialist output.}}{6}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:t2examples}{{8}{6}{Task 2 hard-routed restoration examples showing classifier prediction and specialist output}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-C}}Backend}{6}{subsection.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Task 2 misrouting failure cases where classifier errors led to incorrect specialist selection.}}{6}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:t2failures}{{9}{6}{Task 2 misrouting failure cases where classifier errors led to incorrect specialist selection}{figure.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Average Routing Weights by Corruption Type}}{6}{table.caption.19}\protected@file@percent }
+\newlabel{tab:t3routing}{{X}{6}{Average Routing Weights by Corruption Type}{table.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-D}}Deployment}{6}{subsection.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Experiment Tracking}{6}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {X}Limitations}{6}{section.10}\protected@file@percent }
+\bibcite{vincent2008}{1}
+\bibcite{wang2004ssim}{2}
+\bibcite{shazeer2017}{3}
+\bibcite{isola2017}{4}
+\bibcite{dumoulin2017}{5}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Task 3 routing weight heatmap showing average expert weights per corruption type and severity.}}{7}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:t3heatmap}{{10}{7}{Task 3 routing weight heatmap showing average expert weights per corruption type and severity}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Task 3 routing weight distributions across the test set.}}{7}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:t3distributions}{{11}{7}{Task 3 routing weight distributions across the test set}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XI}Conclusion}{7}{section.11}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XI}{\ignorespaces Task 3 — Soft MoE vs.\ Hard Routing vs.\ Universal}}{7}{table.caption.22}\protected@file@percent }
+\newlabel{tab:t3comparison}{{XI}{7}{Task 3 — Soft MoE vs.\ Hard Routing vs.\ Universal}{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XII}{\ignorespaces Task 4 Optuna Search Space and Best Configuration}}{7}{table.caption.25}\protected@file@percent }
+\newlabel{tab:t4optuna}{{XII}{7}{Task 4 Optuna Search Space and Best Configuration}{table.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{References}{7}{section*.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Task 3 representative soft MoE restoration results.}}{8}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:t3examples}{{12}{8}{Task 3 representative soft MoE restoration results}{figure.caption.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XIII}{\ignorespaces Task 4 — Test Metrics by Style}}{8}{table.caption.26}\protected@file@percent }
+\newlabel{tab:t4results}{{XIII}{8}{Task 4 — Test Metrics by Style}{table.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Task 3 failure cases for the soft MoE system.}}{8}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:t3failures}{{13}{8}{Task 3 failure cases for the soft MoE system}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Task 4 GAN training curves: discriminator and generator losses.}}{8}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:t4curves}{{14}{8}{Task 4 GAN training curves: discriminator and generator losses}{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Task 4 test results: input photograph, generated sketch, and ground-truth sketch.}}{9}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:t4examples}{{15}{9}{Task 4 test results: input photograph, generated sketch, and ground-truth sketch}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Task 4 style-swap experiment: same photograph rendered in all three sketch styles.}}{9}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:t4swap}{{16}{9}{Task 4 style-swap experiment: same photograph rendered in all three sketch styles}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Task 4 failure cases for face-to-sketch generation.}}{10}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:t4failures}{{17}{10}{Task 4 failure cases for face-to-sketch generation}{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Google Stitch design for Universal Restoration workspace.}}{10}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:stitch_universal}{{18}{10}{Google Stitch design for Universal Restoration workspace}{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Google Stitch design for Hard-Routed Restoration workspace.}}{10}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:stitch_hard}{{19}{10}{Google Stitch design for Hard-Routed Restoration workspace}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Google Stitch design for Soft MoE workspace.}}{11}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:stitch_soft}{{20}{11}{Google Stitch design for Soft MoE workspace}{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Google Stitch design for Face-to-Sketch workspace.}}{11}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:stitch_sketch}{{21}{11}{Google Stitch design for Face-to-Sketch workspace}{figure.caption.34}{}}
+\gdef \@abspage@last{11}
