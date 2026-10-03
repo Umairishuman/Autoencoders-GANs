@@ -5,3 +5,4 @@ GenAI_Assignment#1.pdf
 .env
 checkpoints/
 wandb/
+myenv/
