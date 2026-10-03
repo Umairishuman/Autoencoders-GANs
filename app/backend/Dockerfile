@@ -4,7 +4,7 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
-    PYTHONPATH=/app/src:/app/backend \
+    PYTHONPATH=/app/backend:/app/backend \
     MODELS_DIR=/app/models \
     SAMPLES_DIR=/app/backend/samples
 
@@ -13,7 +13,7 @@ COPY backend/requirements.txt backend/requirements.txt
 RUN pip install -r backend/requirements.txt
 
 # pet_data.py is the SAME module that produced the training/validation/test corruptions
-COPY src/pet_data.py src/pet_data.py
+COPY backend/pet_data.py backend/pet_data.py
 COPY backend/app backend/app
 COPY backend/samples backend/samples
 

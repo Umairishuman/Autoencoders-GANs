@@ -35,10 +35,12 @@ export default function FaceToSketch() {
 
   const startWebcam = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: 512, height: 512 } });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
+      });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
-        videoRef.current.play();
+        await videoRef.current.play();
         setWebcamActive(true);
       }
     } catch {
@@ -46,18 +48,32 @@ export default function FaceToSketch() {
     }
   };
 
+  const stopWebcam = () => {
+    videoRef.current?.srcObject?.getTracks().forEach((t) => t.stop());
+    if (videoRef.current) videoRef.current.srcObject = null;
+    setWebcamActive(false);
+  };
+
   const captureWebcam = () => {
-    if (!videoRef.current || !canvasRef.current) return;
+    const video = videoRef.current;
+    if (!video || !canvasRef.current) return;
     const canvas = canvasRef.current;
-    canvas.width = 128;
-    canvas.height = 128;
+    const size = 128;
+    canvas.width = size;
+    canvas.height = size;
     const ctx = canvas.getContext('2d');
-    ctx.drawImage(videoRef.current, 0, 0, 128, 128);
+    const vw = video.videoWidth || video.width;
+    const vh = video.videoHeight || video.height;
+    const crop = Math.min(vw, vh);
+    const sx = (vw - crop) / 2;
+    const sy = (vh - crop) / 2;
+    ctx.translate(size, 0);
+    ctx.scale(-1, 1);
+    ctx.drawImage(video, sx, sy, crop, crop, 0, 0, size, size);
     canvas.toBlob((blob) => {
       const file = new File([blob], 'webcam.png', { type: 'image/png' });
       setSource({ file, sample: null, preview: URL.createObjectURL(blob), name: 'Webcam capture' });
-      videoRef.current.srcObject?.getTracks().forEach((t) => t.stop());
-      setWebcamActive(false);
+      stopWebcam();
     }, 'image/png');
   };
 
@@ -91,15 +107,24 @@ export default function FaceToSketch() {
             </div>
             {webcamActive ? (
               <div className="flex flex-col items-center gap-3">
-                <video ref={videoRef} className="w-48 h-48 rounded-lg object-cover bg-black" autoPlay playsInline muted />
+                <video ref={videoRef} className="w-48 h-48 rounded-lg object-cover bg-black" style={{ transform: 'scaleX(-1)' }} autoPlay playsInline muted />
                 <canvas ref={canvasRef} className="hidden" />
-                <button
-                  onClick={captureWebcam}
-                  className="px-4 py-2 rounded-lg bg-primary text-on-primary text-[12px] font-medium shadow-sm"
-                >
-                  <span className="material-symbols-outlined text-[16px] mr-1 align-middle">camera</span>
-                  Capture
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={captureWebcam}
+                    className="px-4 py-2 rounded-lg bg-primary text-on-primary text-[12px] font-medium shadow-sm flex items-center gap-1"
+                  >
+                    <span className="material-symbols-outlined text-[16px]">camera</span>
+                    Capture
+                  </button>
+                  <button
+                    onClick={stopWebcam}
+                    className="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface-variant text-[12px] font-medium border border-outline-variant/30 flex items-center gap-1"
+                  >
+                    <span className="material-symbols-outlined text-[16px]">close</span>
+                    Cancel
+                  </button>
+                </div>
               </div>
             ) : (
               <button
