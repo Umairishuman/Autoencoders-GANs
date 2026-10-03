@@ -95,7 +95,7 @@ The trained ONNX models are located in `app/AI/models/`:
 | Task 3 | `task3/task3_soft_moe.onnx` | Soft mixture-of-experts (gate + 3 experts) |
 | Task 4 | `task4/task4_face2sketch_generator.onnx` | Face-to-sketch generator |
 
-These files are gitignored due to size. If missing, download them from: *[add your download link here]*
+These files are tracked via Git LFS. They are downloaded automatically when cloning the repository. If `git clone` did not fetch them, run `git lfs pull`.
 
 The Docker Compose configuration mounts `app/AI/models/` read-only into the backend container.
 

@@ -1,6 +1,5 @@
 GenAI_Assignment#1.pdf
 *.pth
-*.onnx
 *.zip
 .env
 checkpoints/
