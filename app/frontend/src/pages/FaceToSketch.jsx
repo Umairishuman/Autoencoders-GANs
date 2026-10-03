@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import ImageSource from '../components/ImageSource';
 import { generateSketch } from '../lib/api';
 
@@ -16,8 +16,10 @@ export default function FaceToSketch() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [webcamActive, setWebcamActive] = useState(false);
+  const [webcamReady, setWebcamReady] = useState(false);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const streamRef = useRef(null);
 
   const handleGenerate = useCallback(async () => {
     if (!source) return;
@@ -33,28 +35,45 @@ export default function FaceToSketch() {
     }
   }, [source, style, allStyles]);
 
+  useEffect(() => {
+    if (webcamActive && videoRef.current && streamRef.current) {
+      const video = videoRef.current;
+      video.srcObject = streamRef.current;
+      video.onloadedmetadata = () => {
+        video.play().then(() => setWebcamReady(true)).catch(() => {});
+      };
+    }
+  }, [webcamActive]);
+
+  useEffect(() => {
+    return () => {
+      streamRef.current?.getTracks().forEach((t) => t.stop());
+    };
+  }, []);
+
   const startWebcam = async () => {
+    setError(null);
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
       });
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        await videoRef.current.play();
-        setWebcamActive(true);
-      }
+      streamRef.current = stream;
+      setWebcamReady(false);
+      setWebcamActive(true);
     } catch {
-      setError('Could not access webcam');
+      setError('Could not access webcam. Make sure you allow camera access.');
     }
   };
 
-  const stopWebcam = () => {
-    videoRef.current?.srcObject?.getTracks().forEach((t) => t.stop());
+  const stopWebcam = useCallback(() => {
+    streamRef.current?.getTracks().forEach((t) => t.stop());
+    streamRef.current = null;
     if (videoRef.current) videoRef.current.srcObject = null;
     setWebcamActive(false);
-  };
+    setWebcamReady(false);
+  }, []);
 
-  const captureWebcam = () => {
+  const captureWebcam = useCallback(() => {
     const video = videoRef.current;
     if (!video || !canvasRef.current) return;
     const canvas = canvasRef.current;
@@ -62,8 +81,8 @@ export default function FaceToSketch() {
     canvas.width = size;
     canvas.height = size;
     const ctx = canvas.getContext('2d');
-    const vw = video.videoWidth || video.width;
-    const vh = video.videoHeight || video.height;
+    const vw = video.videoWidth || 640;
+    const vh = video.videoHeight || 480;
     const crop = Math.min(vw, vh);
     const sx = (vw - crop) / 2;
     const sy = (vh - crop) / 2;
@@ -71,11 +90,12 @@ export default function FaceToSketch() {
     ctx.scale(-1, 1);
     ctx.drawImage(video, sx, sy, crop, crop, 0, 0, size, size);
     canvas.toBlob((blob) => {
+      if (!blob) return;
       const file = new File([blob], 'webcam.png', { type: 'image/png' });
       setSource({ file, sample: null, preview: URL.createObjectURL(blob), name: 'Webcam capture' });
       stopWebcam();
     }, 'image/png');
-  };
+  }, [stopWebcam]);
 
   return (
     <div className="flex flex-col w-full">
@@ -105,17 +125,32 @@ export default function FaceToSketch() {
               <span className="material-symbols-outlined text-primary text-[18px]">videocam</span>
               <span className="font-semibold text-[16px] text-on-surface">Webcam Capture</span>
             </div>
+            <canvas ref={canvasRef} className="hidden" />
             {webcamActive ? (
               <div className="flex flex-col items-center gap-3">
-                <video ref={videoRef} className="w-48 h-48 rounded-lg object-cover bg-black" style={{ transform: 'scaleX(-1)' }} autoPlay playsInline muted />
-                <canvas ref={canvasRef} className="hidden" />
+                <div className="relative w-48 h-48 rounded-lg overflow-hidden bg-black">
+                  <video
+                    ref={videoRef}
+                    className="w-full h-full object-cover"
+                    style={{ transform: 'scaleX(-1)' }}
+                    autoPlay
+                    playsInline
+                    muted
+                  />
+                  {!webcamReady && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                      <span className="material-symbols-outlined text-white text-[24px] animate-spin">refresh</span>
+                    </div>
+                  )}
+                </div>
                 <div className="flex gap-2">
                   <button
                     onClick={captureWebcam}
-                    className="px-4 py-2 rounded-lg bg-primary text-on-primary text-[12px] font-medium shadow-sm flex items-center gap-1"
+                    disabled={!webcamReady}
+                    className="px-4 py-2 rounded-lg bg-primary text-on-primary text-[12px] font-medium shadow-sm flex items-center gap-1 disabled:opacity-50"
                   >
                     <span className="material-symbols-outlined text-[16px]">camera</span>
-                    Capture
+                    Capture Photo
                   </button>
                   <button
                     onClick={stopWebcam}
