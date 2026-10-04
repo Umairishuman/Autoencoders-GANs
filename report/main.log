@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.3)  3 OCT 2026 23:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.3)  4 OCT 2026 08:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,8 +839,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 622--623
 []\OT1/ptm/m/n/10 Single-command startup: \OT1/pcr/m/n/10 docker compose up
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+[]\OT1/ptm/m/n/10 The full W&B project dash-board is avail-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+\OT1/ptm/m/n/10 able at: []$https : / / forge . coreweave . com / wandb /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+\OT1/ptm/m/n/10 umairishuman-[]national-[]university-[]of-[]computer-[]and-[]em
+ergin /
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 629--630
+\OT1/ptm/m/n/10 genai-[]assignment1$[]. Lo-cal run logs are also stored in
+ []
+
 [6 <../app/AI/figures/task2/routing_representative.png> <../app/AI/figures/task
 2/misrouting_failures.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+[][]$\OT1/ptm/m/n/10 https : / / drive . google . com / ^^Lle / d /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+\OT1/ptm/m/n/10 1OeuYZWvbKa22RrwhUvS800ysF655pQx9 / view ? usp =
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -867,11 +897,11 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F54CA5844357E01A9D2D757031DB1413;6056.
+(rerunfilecheck)             Checksum: BB97009C81340EDDFFCEAF03D7C2B90D;6056.
  ) 
 Here is how much of TeX's memory you used:
- 13045 strings out of 467871
- 216105 string characters out of 5416404
+ 13046 strings out of 467871
+ 216116 string characters out of 5416404
  653433 words of memory out of 5000000
  41671 multiletter control sequences out of 15000+600000
  668415 words of font info for 116 fonts, out of 8000000 for 9000
@@ -898,9 +928,9 @@ tmb8a.pfb><C:/Users/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/type1/urw/tim
 es/utmbi8a.pfb><C:/Users/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/type1/ur
 w/times/utmr8a.pfb><C:/Users/Pc Planet/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 28887589 bytes).
+Output written on main.pdf (11 pages, 28890157 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 101 named destinations out of 1000 (max. 500000)
  426 words of extra memory for PDF output out of 10000 (max. 10000000)
 
