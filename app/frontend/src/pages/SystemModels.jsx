@@ -92,17 +92,17 @@ export default function SystemModels() {
                   className="p-4 bg-surface-container-low rounded-lg border border-outline-variant/30 flex items-center justify-between"
                 >
                   <div className="flex items-center gap-3">
-                    <span className={`w-2.5 h-2.5 rounded-full ${info.ready ? 'bg-primary' : 'bg-error'}`} />
+                    <span className={`w-2.5 h-2.5 rounded-full ${info.loaded ? 'bg-primary' : 'bg-error'}`} />
                     <div>
                       <div className="text-[13px] text-on-surface font-medium">{role}</div>
                       <div className="font-mono text-[11px] text-secondary">{info.file || '—'}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 text-secondary font-mono text-[11px]">
-                    {info.input_shape && <span>Input: {JSON.stringify(info.input_shape)}</span>}
-                    {info.warmup_ms != null && <span>Warmup: {info.warmup_ms.toFixed(0)}ms</span>}
-                    <span className={`px-2 py-0.5 rounded font-medium ${info.ready ? 'bg-secondary-container text-on-secondary-container' : 'bg-error-container text-error'}`}>
-                      {info.ready ? 'Ready' : 'Not loaded'}
+                    {info.size_mb > 0 && <span>{info.size_mb} MB</span>}
+                    {info.warmup_latency_ms != null && <span>Warmup: {info.warmup_latency_ms.toFixed(0)}ms</span>}
+                    <span className={`px-2 py-0.5 rounded font-medium ${info.loaded ? 'bg-secondary-container text-on-secondary-container' : 'bg-error-container text-error'}`}>
+                      {info.loaded ? 'Ready' : info.error || 'Not loaded'}
                     </span>
                   </div>
                 </div>

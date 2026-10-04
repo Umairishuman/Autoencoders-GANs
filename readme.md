@@ -132,7 +132,10 @@ All models were trained on Kaggle (GPU). Training notebooks are in `training_scr
 - `01_task1_universal_dae.ipynb` / `01_task1_universal_dae_v2.ipynb` — Task 1 training with Optuna
 - Additional task notebooks were run as Kaggle notebooks (linked in the report)
 
-Experiment tracking was done with **Weights & Biases**. Local W&B run logs are in `app/AI/wandb/`.
+Experiment tracking was done with **Weights & Biases**. The project dashboard is available at:
+[W&B Dashboard](https://forge.coreweave.com/wandb/umairishuman-national-university-of-computer-and-emergin/genai-assignment1)
+
+Local W&B run logs are also stored in `app/AI/wandb/`.
 
 ## Hyperparameter Optimization
 
