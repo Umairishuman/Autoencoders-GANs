@@ -80,7 +80,7 @@ export default function Layout() {
           </div>
           <nav className="space-y-1">
             <a
-              href={health?.experiment_tracking || '#'}
+              href="https://forge.coreweave.com/wandb/umairishuman-national-university-of-computer-and-emergin/genai-assignment1"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors text-[12px]"
@@ -88,6 +88,18 @@ export default function Layout() {
               <div className="flex items-center gap-2.5">
                 <span className="material-symbols-outlined text-[18px]">monitoring</span>
                 <span className="truncate">Experiments (W&B)</span>
+              </div>
+              <span className="material-symbols-outlined text-[14px] text-secondary">open_in_new</span>
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1OeuYZWvbKa22RrwhUvS800ysF655pQx9/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors text-[12px]"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="material-symbols-outlined text-[18px]">play_circle</span>
+                <span className="truncate">Demo Video</span>
               </div>
               <span className="material-symbols-outlined text-[14px] text-secondary">open_in_new</span>
             </a>

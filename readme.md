@@ -2,6 +2,8 @@
 
 A browser-based application for multi-corruption image restoration and style-conditioned face-to-sketch generation, built with React + Tailwind CSS (frontend) and FastAPI + ONNX Runtime (backend).
 
+**Demo Video:** [Google Drive](https://drive.google.com/file/d/1OeuYZWvbKa22RrwhUvS800ysF655pQx9/view?usp=drive_link)
+
 ## Repository Structure
 
 ```
